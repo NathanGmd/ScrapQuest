@@ -36,15 +36,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_05_102043) do
   end
 
   create_table "items", force: :cascade do |t|
-    t.string "gender"
-    t.string "profession"
-    t.string "study_lvl"
-    t.string "nationality"
-    t.string "language"
-    t.integer "age"
-    t.boolean "marital_status"
-    t.string "city"
-    t.boolean "children"
     t.bigint "feature_id", null: false
     t.bigint "option_id", null: false
     t.bigint "prospect_id", null: false
