@@ -9,12 +9,8 @@ class FiltersController < ApplicationController
       option: Option.find_by(value: filter_params["option"]),
       feature: Feature.find(Option.find_by(value: filter_params["option"]).feature_id)
     )
-    if @filter.save!
-      redirect_to filters_path, notice: "successfully added!"
-    else
-      
-    end
-    raise
+    @filter.save!
+    redirect_to filters_path, notice: "successfully added!"
   end
 
   private
