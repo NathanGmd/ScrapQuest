@@ -49,11 +49,11 @@
   .left-bot-card,
   .middle-bot-card,
   .right-bot-card {
-    width: calc(33.33% - 20px);
+    width: calc(33.33% - 35px);
     background-color: #f9f9f9;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.1);
   }
   
   .left-bot-card h2,
@@ -62,14 +62,109 @@
     margin-top: 0;
   }
 
+  .left-bot-card {
+    width: calc(33.33% - 35px);
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    margin-left: 25px;
+  }
+  
+  .left-bot-card:hover {
+    box-shadow: 0px 7px 10px rgb(225, 255, 252);
+  }
+  
+  .left-bot-card h2 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #333333;
+    margin: 0;
+  }
+
+  .middle-bot-card {
+    width: calc(33.33% - 35px);
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .middle-bot-card:hover {
+    box-shadow: 0px 7px 10px rgb(225, 255, 252);
+  }
+
+  .middle-bot-card h2 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #333333;
+    margin: 0;
+  }
+
+  .right-bot-card {
+    width: calc(33.33% - 35px);
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    margin-right: 25px;
+  }
+  
+  .right-bot-card:hover {
+    box-shadow: 0px 7px 10px rgb(225, 255, 252);
+  }
+
+  .right-bot-card h2 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #333333;
+    margin: 0;
+  }
+  
+  .center-text-left-card {
+    text-align: center;
+    font-size: 18px;
+    color: #666666;
+    margin-bottom: 15px;
+  }
+  
   .countup {
-    font-size: 48px;
+    font-size: 56px;
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50vh;
+    height: 100px;
     margin: 0;
-    font-weight: 600;
+    font-weight: bold;
+    color: #000000;
+  }
+  
+  #prospects-bold {
+    text-align: center;
+    font-size: 24px;
+    color: #666666;
+    margin-top: 5px;
+    font-weight: bold;
+  }  
+
+  .update-box {
+    background-color: #ffffff;
+    color: #333333;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    font-size: 18px;
+  }
+  
+  .update-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
   }
   
