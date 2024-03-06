@@ -1,7 +1,6 @@
 class ResearchesController < ApplicationController
   def index
-    @items = Item.all
-    @items = Item.includes(:feature)
+    @researches = Research.all
   end
 
   def create
