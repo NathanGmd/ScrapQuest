@@ -1,1 +1,69 @@
-// Specific CSS for your home-page
+.globaldashboard {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  height: 92vh;
+}
+
+.dashboardleft {
+  display: flex;
+  flex-direction: column;
+  gap: 130px;
+  width: 40%;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+.left-box {
+  background-color: #E6E6E6;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.update-box {
+  background-color: #E6E6E6;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.dashboardright {
+  width: 100%;
+  margin-left: 60px;
+}
+
+.right-top-dashboard {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.update-box {
+  margin: 30px
+}
+
+.right-bottom-dashboard {
+margin-top: 10%;
+padding-bottom: 40px;
+background-color: #f0f0f0;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
