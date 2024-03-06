@@ -1,0 +1,92 @@
+=> 
+[[32m#<Prospect:0x00007fa6db735df0[0m
+  id: [34m[1m6[0m,
+  first_name: [31m[1m"[0m[31mJohn[0m[31m[1m"[0m,
+  last_name: [31m[1m"[0m[31mDoe[0m[31m[1m"[0m,
+  address: [31m[1m"[0m[31m158 avenue de la victoire[0m[31m[1m"[0m,
+  email: [31m[1m"[0m[31mjohn.doe@gmail.com[0m[31m[1m"[0m,
+  created_at: Wed, 06 Mar 2024 10:43:22.197230000 UTC +00:00,
+  updated_at: Wed, 06 Mar 2024 10:43:22.197230000 UTC +00:00[32m>[0m,
+ [32m#<Prospect:0x00007fa6d91587e0[0m
+  id: [34m[1m7[0m,
+  first_name: [31m[1m"[0m[31mJane[0m[31m[1m"[0m,
+  last_name: [31m[1m"[0m[31mDupont[0m[31m[1m"[0m,
+  address: [31m[1m"[0m[31m35 cours Victor[0m[31m[1m"[0m,
+  email: [31m[1m"[0m[31mjane.dupont@gmail.com[0m[31m[1m"[0m,
+  created_at: Wed, 06 Mar 2024 10:43:22.210010000 UTC +00:00,
+  updated_at: Wed, 06 Mar 2024 10:43:22.210010000 UTC +00:00[32m>[0m,
+ [32m#<Prospect:0x00007fa6d9158718[0m
+  id: [34m[1m8[0m,
+  first_name: [31m[1m"[0m[31mCamille[0m[31m[1m"[0m,
+  last_name: [31m[1m"[0m[31mElla[0m[31m[1m"[0m,
+  address: [31m[1m"[0m[31m132 cours alsace loraine[0m[31m[1m"[0m,
+  email: [31m[1m"[0m[31mcamille.elladoe@gmail.com[0m[31m[1m"[0m,
+  created_at: Wed, 06 Mar 2024 10:43:22.217141000 UTC +00:00,
+  updated_at: Wed, 06 Mar 2024 10:43:22.217141000 UTC +00:00[32m>[0m,
+ [32m#<Prospect:0x00007fa6d9158650[0m
+  id: [34m[1m9[0m,
+  first_name: [31m[1m"[0m[31mEllias[0m[31m[1m"[0m,
+  last_name: [31m[1m"[0m[31makir[0m[31m[1m"[0m,
+  address: [31m[1m"[0m[31m26 rue des petits poies[0m[31m[1m"[0m,
+  email: [31m[1m"[0m[31mellias.akir@gmail.com[0m[31m[1m"[0m,
+  created_at: Wed, 06 Mar 2024 10:43:22.225365000 UTC +00:00,
+  updated_at: Wed, 06 Mar 2024 10:43:22.225365000 UTC +00:00[32m>[0m,
+ [32m#<Prospect:0x00007fa6d9158588[0m
+  id: [34m[1m10[0m,
+  first_name: [31m[1m"[0m[31mJustine[0m[31m[1m"[0m,
+  last_name: [31m[1m"[0m[31mmaunier[0m[31m[1m"[0m,
+  address: [31m[1m"[0m[31m145 rue des routes[0m[31m[1m"[0m,
+  email: [31m[1m"[0m[31mJustine.maunier@gmail.com[0m[31m[1m"[0m,
+  created_at: Wed, 06 Mar 2024 10:43:22.232730000 UTC +00:00,
+  updated_at: Wed, 06 Mar 2024 10:43:22.232730000 UTC +00:00[32m>[0m]
+=> 
+[[32m#<Prospect:0x00007f4a0013e060[0m
+  id: [34m[1m11[0m,
+  first_name: [31m[1m"[0m[31mJohn[0m[31m[1m"[0m,
+  last_name: [31m[1m"[0m[31mDoe[0m[31m[1m"[0m,
+  address: [31m[1m"[0m[31m158 avenue de la victoire[0m[31m[1m"[0m,
+  email: [31m[1m"[0m[31mjohn.doe@gmail.com[0m[31m[1m"[0m,
+  created_at:
+   Wed, 06 Mar 2024 11:13:00.151016000 UTC +00:00,
+  updated_at:
+   Wed, 06 Mar 2024 11:13:00.151016000 UTC +00:00[32m>[0m,
+ [32m#<Prospect:0x00007f49fdb3e450[0m
+  id: [34m[1m12[0m,
+  first_name: [31m[1m"[0m[31mJane[0m[31m[1m"[0m,
+  last_name: [31m[1m"[0m[31mDupont[0m[31m[1m"[0m,
+  address: [31m[1m"[0m[31m35 cours Victor[0m[31m[1m"[0m,
+  email: [31m[1m"[0m[31mjane.dupont@gmail.com[0m[31m[1m"[0m,
+  created_at:
+   Wed, 06 Mar 2024 11:13:00.163446000 UTC +00:00,
+  updated_at:
+   Wed, 06 Mar 2024 11:13:00.163446000 UTC +00:00[32m>[0m,
+ [32m#<Prospect:0x00007f49fdb3e388[0m
+  id: [34m[1m13[0m,
+  first_name: [31m[1m"[0m[31mCamille[0m[31m[1m"[0m,
+  last_name: [31m[1m"[0m[31mElla[0m[31m[1m"[0m,
+  address: [31m[1m"[0m[31m132 cours alsace loraine[0m[31m[1m"[0m,
+  email: [31m[1m"[0m[31mcamille.elladoe@gmail.com[0m[31m[1m"[0m,
+  created_at:
+   Wed, 06 Mar 2024 11:13:00.170951000 UTC +00:00,
+  updated_at:
+   Wed, 06 Mar 2024 11:13:00.170951000 UTC +00:00[32m>[0m,
+ [32m#<Prospect:0x00007f49fdb3e2c0[0m
+  id: [34m[1m14[0m,
+  first_name: [31m[1m"[0m[31mEllias[0m[31m[1m"[0m,
+  last_name: [31m[1m"[0m[31makir[0m[31m[1m"[0m,
+  address: [31m[1m"[0m[31m26 rue des petits poies[0m[31m[1m"[0m,
+  email: [31m[1m"[0m[31mellias.akir@gmail.com[0m[31m[1m"[0m,
+  created_at:
+   Wed, 06 Mar 2024 11:13:00.178102000 UTC +00:00,
+  updated_at:
+   Wed, 06 Mar 2024 11:13:00.178102000 UTC +00:00[32m>[0m,
+ [32m#<Prospect:0x00007f49fdb3e1f8[0m
+  id: [34m[1m15[0m,
+  first_name: [31m[1m"[0m[31mJustine[0m[31m[1m"[0m,
+  last_name: [31m[1m"[0m[31mmaunier[0m[31m[1m"[0m,
+  address: [31m[1m"[0m[31m145 rue des routes[0m[31m[1m"[0m,
+  email: [31m[1m"[0m[31mJustine.maunier@gmail.com[0m[31m[1m"[0m,
+  created_at:
+   Wed, 06 Mar 2024 11:13:00.186105000 UTC +00:00,
+  updated_at:
+   Wed, 06 Mar 2024 11:13:00.186105000 UTC +00:00[32m>[0m]
