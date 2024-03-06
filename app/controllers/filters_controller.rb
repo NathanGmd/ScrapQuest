@@ -1,9 +1,11 @@
 class FiltersController < ApplicationController
   def index
-    @research = Research.find(params[:research_id])
-    @filters = Filter.where(research_id: @research.id)
-    @features = Feature.all
     @filter = Filter.new
+    @research = Research.find(params[:research_id])
+    @filters = Filter.where(research_id: @research)
+    @features = Feature.all
+    @grouped_options = @research.options.group_by(&:feature_id)
+    @grouped_options = @grouped_options.transform_keys! { |key| Feature.find(key) }
   end
 
   def create

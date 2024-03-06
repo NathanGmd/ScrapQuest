@@ -9,10 +9,10 @@
         </div>
         <div class="feature-options d-flex">
           <% feature.options.each do |option| %>
-            <div class="px-2">
+            <div class="px-2" data-controller="options">
               <%= simple_form_for [@research, @filter] do |f| %>
                 <%= f.hidden_field :option, value: option.value %>
-                <%= f.button :submit, option.value, class: "btn btn-default btn-primary" %>
+                <%= f.button :submit, option.value, class: "btn btn-default btn-info", data: { options_target: "btn", action: "click->options#toggleBtn" } %>
               <% end %>
             </div>
           <% end %>
@@ -23,14 +23,21 @@
   <div class="index-container-right w-25 p-2 border h-auto m-2">
     <h2>Vos features/options</h2>
       <div class="filters-display">
-        <% @filters.each do |filter| %>
+        <% @grouped_options.each do |feature, options| %>
           <div class="mb-2">
-            <div class="border-bottom"><h3><%= filter.feature.title %></h3></div>
+            <div class="border-bottom"><h3><%= feature.title %></h3></div>
             <div class="d-flex">
-              <div><%= filter.option.value %></div>
+              <% options.each do |option| %>
+                <div class="px-2"><%= option.value %></div>
+              <% end %>
             </div>
           </div>
         <% end %>
+        <div class="w-100% d-flex justify-content-center p-2">
+        <%= link_to edit_research_path(@research) do %>
+          <button class="btn btn-primary">Selection des formules</button>
+        <% end %>
+        </div>
       </div>
   </div>
 </div>
