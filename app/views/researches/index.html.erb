@@ -2,15 +2,20 @@
   <div class="d-flex justify-content-between align-items-center mb-4">
     <h1 class="my-4">Your Databases :</h1>
   </div>
-  
-  <% @items.each do |item| %>
-    <div class="border p-3 rounded shadow position-relative mb-4">
-      <a href="#" class="btn btn-primary position-absolute top-0 end-1 mt-3" style="right: 30px;">Access Content</a>
-      <h2 class="mb-3">Database: <%= item.feature.title %></h2>
-      <div class="overflow-auto">
-        <ul class="list-group list-group-horizontal">
-        </ul>
-      </div>
+
+  <% @researches.each do |research| %>
+  <div class="border p-4 mb-4 rounded shadow position-relative">
+    <h2 class="mb-3">Database: <%= research.id %></h2>
+    <p>nombre de prospects trouvés: <%= research.prospect_count %></p>
+    <div class="overflow-auto">
+      <ul class="list-group list-group-horizontal">
+      <% research.filters.each do |filter| %>
+        <li class="list-group-item"><strong style="color: #495057;"><%= filter.feature.title %>:</strong> <%= filter.option.value %></li>
+      <% end %>
+      </ul>
     </div>
+
+    <a href="#" class="btn btn-primary position-absolute end-1 mt-4" style="right: 30px; top: 4px;">Access Content</a>
+  </div>
   <% end %>
 </div>

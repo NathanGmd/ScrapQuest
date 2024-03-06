@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :items
   resources :features
   resources :prospects
+  resources :options
 
   # Defines the root path route ("/")
   # root "posts#index"
