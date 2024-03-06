@@ -24,10 +24,10 @@ TYPE = {
   "study_lvl" => %w[none licence master doctorat],
   "nationality" => %w[french english spanish german belgian],
   "language" => %w[french english german spanish],
-  "age" => (20..70).to_a,
-  "marital_status" => [true, false],
+  "age" => (20..70).to_a.sample(7).sort,
+  "marital_status" => %w[yes no],
   "city" => %w[bordeaux paris london barcelona berlin],
-  "children" => [true, false]
+  "children" => %w[yes no]
 }
 
 Prospect.create(first_name: "John", last_name: "Doe", address: "158 avenue de la victoire", email: "john.doe@gmail.com")
