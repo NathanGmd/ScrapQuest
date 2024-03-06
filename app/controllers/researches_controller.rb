@@ -1,5 +1,6 @@
 class ResearchesController < ApplicationController
   def index
-    @reservations = []
+    @items = Item.all
+    @items = Item.includes(:feature)
   end
 end
