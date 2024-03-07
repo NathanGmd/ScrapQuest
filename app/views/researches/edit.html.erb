@@ -1,1 +1,21 @@
 <h1>pages#edit</h1>
+
+<div>
+  <div class= "h-25">
+  </div>
+  <div class="formula-container row " data-controller="formula" data-formula-target="formula-container">
+    <% 4.times do %>
+      <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+        <div class="card mb-2">
+          <div class="card-body">
+            <span class="badge bg-primary mb-2">Item 1</span>
+            <h5 class="card-title">Item 2</h5>
+            <%= link_to research_path(@research) do %>
+              <div class="center"><button class="btn btn-primary">Show</button></div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

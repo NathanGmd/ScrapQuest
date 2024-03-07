@@ -9,7 +9,7 @@ export default class extends Controller {
   }
 
   toggleBtn() {
-    event.preventDefault()
+    // event.preventDefault()
     this.btnTarget.classList.toggle("btn-info")
     this.btnTarget.classList.toggle("btn-secondary")
   }
