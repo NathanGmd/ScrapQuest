@@ -1,8 +1,7 @@
-
-<div class="container">
+<div class="container researcheshow">
   <div class="row mb-4 mt-3 rounded">
     <div class="col-md-12">
-      <div class="border p-3 rounded shadow" style="max-width: 470px;">
+      <div class="researchesshowyour border p-3 rounded shadow">
         <h1 class="display-3">Your Database</h1>
       </div>
     </div>
@@ -12,10 +11,14 @@
     <div class="col-md-4">
       <div class="border p-4 mb-4 rounded shadow">
         <h4>Filtres:</h4>
-        <ul class="list-group" style="height: 300px; overflow-y: scroll;">
-          <% @research.filters.each do |filter| %>
+        <ul class="researchesshow list-group">
+          <% grouped_options = @research.filters.includes(:feature, :option).group_by { |filter| filter.feature.title }.transform_values do |filters|
+               filters.map { |filter| filter.option.value }.uniq
+             end
+          %>
+          <% grouped_options.each do |feature_title, options_values| %>
             <li class="list-group-item">
-              <strong><%= filter.feature.title %> :</strong> <%= filter.option.value %>
+              <strong><%= feature_title %> :</strong> <%= options_values.join(', ') %>
             </li>
           <% end %>
         </ul>
@@ -25,7 +28,7 @@
     <div class="col-md-8">
       <div class="border p-4 rounded shadow mb-4">
         <h2 class="mb-3">Prospects</h2>
-        <div style="height: 300px; overflow-y: scroll;">
+        <div class="researchesshow">
           <table class="table table-bordered">
             <thead>
               <tr>
@@ -48,9 +51,8 @@
           </table>
         </div>
       </div>
-
       <div class="d-flex justify-content-end">
-        <%= link_to "Exporter CSV", research_path(@research, format: :csv), class: "mb-5 btn btn-info" %>
+        <%= link_to "Export CSV", research_path(@research, format: :csv), class: "mb-5 btn btn-info" %>
       </div>
     </div>
   </div>
