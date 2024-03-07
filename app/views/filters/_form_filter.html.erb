@@ -1,0 +1,23 @@
+<div class="filter-box">
+  <% @features.each do |feature| %>
+    <div class="feature-name p-2">
+      <h2><%= feature.title %></h2>
+    </div>
+    <div class="feature-options d-flex">
+      <% feature.options.each do |option| %>
+        <div class="px-2">
+          <%= simple_form_for [@research, @filter], html: { data: {options_target: "form"}} do |f| %>
+            <%= f.hidden_field :option, value: option.value %>
+            <%= f.button :submit,
+                         option.value,
+                         class: "btn btn-default btn-info",
+                         data: {
+                          options_target: "btn",
+                          action: "click->options#displayOpt"
+                          } %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
