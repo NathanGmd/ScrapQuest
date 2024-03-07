@@ -22,7 +22,6 @@ TYPE = {
   "gender" => %w[male female],
   "profession" => %w[baker builder manager commercial taillor],
   "study_lvl" => %w[none licence master doctorat],
-  "nationality" => %w[french english spanish german belgian],
   "language" => %w[french english german spanish],
   "age" => (20..70).to_a.sample(7).sort,
   "marital_status" => %w[yes no],
