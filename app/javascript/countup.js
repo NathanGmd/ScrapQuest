@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
   let count = 0;
 
   const interval = setInterval(() => {
-    count += 11;
+    count += 10;
 
     if (count >= 8000) {
       count = 8000;
