@@ -1,170 +1,284 @@
 .globaldashboard {
-    background-color: #f9f9f9;
-    width: 100%;
-    height: 100%;
-    margin: 0 auto;
-  }
-  
-  .dashboardtop {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 25px;
-  }
-  
-  .top-button {
-    background-color: #ffffff;
-    color: #1495cd;
-    border-radius: 25px;
-    padding: 0;
-    text-align: center;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 30px;
-    font-weight: 600;
-    cursor: pointer;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s, color 0.3s;
-    width: 400px;
-    height: 90px;
-    margin: 0 10px;
-    box-sizing: border-box;
+  background-color: #f9f9f9;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
 }
 
+.dashboardtop {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 25px;
+}
+
+.top-button {
+  background-color: #ffffff;
+  color: rgb(255, 173, 119);
+  border-radius: 25px;
+  padding: 0;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, color 0.3s;
+  width: 400px;
+  height: 90px;
+  margin: 0 10px;
+  box-sizing: border-box;
+}
 
 .top-button:hover {
-    background-color: #1495cd;
-    color: #ffffff;
+  background-color: rgb(255, 173, 119);
+  color: #ffffff;
 }
 
-  
-  .dashboardbottom {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 0;
-  }
-  
-  .left-bot-card,
-  .middle-bot-card,
-  .right-bot-card {
-    width: calc(33.33% - 35px);
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .left-bot-card h2,
-  .middle-bot-card h2,
-  .right-bot-card h2 {
-    margin-top: 0;
-  }
+.dashboardbottom {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+}
 
-  .left-bot-card {
-    width: calc(33.33% - 35px);
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
-    margin-left: 25px;
-  }
-  
-  .left-bot-card:hover {
-    box-shadow: 0px 7px 10px rgb(225, 255, 252);
-  }
-  
-  .left-bot-card h2 {
-    font-size: 30px;
-    font-weight: bold;
-    color: #333333;
-    margin: 0;
-  }
+.left-bot-card,
+.middle-bot-card,
+.right-bot-card {
+  width: calc(33.33% - 35px);
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #f0f0f0f3;
+}
 
-  .middle-bot-card {
-    width: calc(33.33% - 35px);
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
-  }
-  
-  .middle-bot-card:hover {
-    box-shadow: 0px 7px 10px rgb(225, 255, 252);
-  }
+.left-bot-card h2,
+.middle-bot-card h2,
+.right-bot-card h2 {
+  margin-top: 0;
+}
 
-  .middle-bot-card h2 {
-    font-size: 30px;
-    font-weight: bold;
-    color: #333333;
-    margin: 0;
-  }
+.left-bot-card {
+  width: calc(33.33% - 35px);
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  margin-left: 25px;
+}
 
-  .right-bot-card {
-    width: calc(33.33% - 35px);
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
-    margin-right: 25px;
-  }
-  
-  .right-bot-card:hover {
-    box-shadow: 0px 7px 10px rgb(225, 255, 252);
-  }
+.left-bot-card:hover {
+  box-shadow: 0px 7px 10px rgb(255, 173, 119);
+}
 
-  .right-bot-card h2 {
-    font-size: 30px;
-    font-weight: bold;
-    color: #333333;
-    margin: 0;
-  }
-  
-  .center-text-left-card {
-    text-align: center;
-    font-size: 18px;
-    color: #666666;
-    margin-bottom: 15px;
-  }
-  
-  .countup {
-    font-size: 56px;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
-    margin: 0;
-    font-weight: bold;
-    color: #000000;
-  }
-  
-  #prospects-bold {
-    text-align: center;
-    font-size: 24px;
-    color: #666666;
-    margin-top: 5px;
-    font-weight: bold;
-  }  
+.bot-bot-card {
+  width: 45%;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  margin-left: 5%;
+  margin-right: 2%;
+}
 
-  .update-box {
-    background-color: #ffffff;
-    color: #333333;
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 20px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: center;
-    font-size: 18px;
+.bot-bot-card:hover {
+  box-shadow: 0px 7px 10px rgb(255, 173, 119);
+}
+
+.second-bot-bot-card {
+  width: 45%;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  margin-right: 5%;
+  margin-left: 2%;
+}
+
+.second-bot-bot-card:hover {
+  box-shadow: 0px 7px 10px rgb(255, 173, 119);
+}
+
+.left-bot-card h2 {
+  font-size: 30px;
+  font-weight: bold;
+  color: #333333;
+  margin: 0;
+}
+
+.middle-bot-card {
+  width: calc(33.33% - 35px);
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.middle-bot-card:hover {
+  box-shadow: 0px 7px 10px rgb(255, 173, 119);
+}
+
+.middle-bot-card h2 {
+  font-size: 30px;
+  font-weight: bold;
+  color: #333333;
+  margin: 0;
+}
+
+.right-bot-card {
+  width: calc(33.33% - 35px);
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  margin-right: 25px;
+}
+
+.right-bot-card:hover {
+  box-shadow: 0px 7px 10px rgb(255, 173, 119);
+}
+
+.right-bot-card h2 {
+  font-size: 30px;
+  font-weight: bold;
+  color: #333333;
+  margin: 0;
+}
+
+.center-text-left-card {
+  margin-top: 10%;
+  text-align: center;
+  font-size: 25px;
+  color: #666666;
+  margin-bottom: 1%;
+}
+
+.countup {
+  font-size: 56px;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  margin: 0;
+  font-weight: bold;
+  color: #000000;
+}
+
+#prospects-bold {
+  text-align: center;
+  font-size: 24px;
+  color: #666666;
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+.update-box {
+  background-color: #ffffff;
+  color: #333333;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  font-size: 18px;
+}
+
+.update-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.chartbottom {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.625rem 0;
+}
+
+.bot-bot-card h2 {
+  font-size: 30px;
+  font-weight: bold;
+  color: #333333;
+  margin: 0;
+}
+
+.graph-container {
+  width: 300px;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+.bar-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.bar {
+  position: relative;
+  height: 30px;
+  border-radius: 15px;
+  overflow: hidden;
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+}
+
+.bar span {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10px;
+  font-size: 14px;
+  color: white;
+  font-weight: bold;
+}
+
+.city-name {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #000000;
+}
+
+#bar1 {
+  width: 75%;
+  animation: bounce 1s ease forwards;
+}
+
+#bar2 {
+  width: 50%;
+  animation: bounce 1s ease forwards;
+  animation-delay: 0.2s;
+}
+
+#bar3 {
+  width: 40%;
+  animation: bounce 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
+#bar4 {
+  width: 40%;
+  animation: bounce 1s ease forwards;
+  animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(-10%);
   }
-  
-  .update-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+  50% {
+    transform: translateY(0%);
   }
-  
+  100% {
+    transform: translateY(-10%);
+  }
+}
