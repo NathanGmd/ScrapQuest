@@ -13,6 +13,7 @@ class ResearchesController < ApplicationController
   def show
     @research = Research.find(params[:id])
     @prospects = Prospect.all
+    
     respond_to do |format|
       format.html
       format.csv { send_prospects_csv(@prospects) }
