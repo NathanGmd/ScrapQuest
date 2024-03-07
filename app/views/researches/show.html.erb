@@ -1,0 +1,57 @@
+
+<div class="container">
+  <div class="row mb-4 mt-3 rounded">
+    <div class="col-md-12">
+      <div class="border p-3 rounded shadow" style="max-width: 470px;">
+        <h1 class="display-3">Your Database</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <div class="border p-4 mb-4 rounded shadow">
+        <h4>Filtres:</h4>
+        <ul class="list-group" style="height: 300px; overflow-y: scroll;">
+          <% @research.filters.each do |filter| %>
+            <li class="list-group-item">
+              <strong><%= filter.feature.title %> :</strong> <%= filter.option.value %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-md-8">
+      <div class="border p-4 rounded shadow mb-4">
+        <h2 class="mb-3">Prospects</h2>
+        <div style="height: 300px; overflow-y: scroll;">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Address</th>
+                <th>Email</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @prospects.each do |prospect| %>
+                <tr>
+                  <td><%= prospect.first_name %></td>
+                  <td><%= prospect.last_name %></td>
+                  <td><%= prospect.address %></td>
+                  <td><%= prospect.email %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-end">
+        <%= link_to "Exporter CSV", research_path(@research, format: :csv), class: "mb-5 btn btn-info" %>
+      </div>
+    </div>
+  </div>
+</div>
