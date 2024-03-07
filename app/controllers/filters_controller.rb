@@ -1,13 +1,23 @@
 class FiltersController < ApplicationController
-  before_action :set_research, only: %i[index create]
+  before_action :set_research, only: %i[index toggle]
 
   def index
     @filter = Filter.new
     @filters = Filter.where(research_id: @research)
     @features = Feature.all
-    @grouped_options = @research.options.group_by(&:feature_id)
-    @grouped_options = @grouped_options.transform_keys! { |key| Feature.find(key) }
+    set_display
   end
+
+  def toggle
+    if @research.option_ids.include?(Option.find_by(value: params[:filter][:option]).id)
+      destroy
+    else
+      create
+    end
+  end
+
+
+  private
 
   def create
     @filter = Filter.new(
@@ -16,19 +26,23 @@ class FiltersController < ApplicationController
       research: Research.find(params[:research_id])
     )
     @filter.save!
-    @grouped_options = @research.options.group_by(&:feature_id)
-    @grouped_options = @grouped_options.transform_keys! { |key| Feature.find(key) }
+    set_display
     respond_to do |format|
       format.html
       format.text { render partial: 'filters/filters_content', locals: { research: @research, grouped_options: @grouped_options }, formats: [:html] }
     end
   end
 
-  def delete
-    
+  def destroy
+    @option = Option.find_by(value: params[:filter][:option])
+    @filter = @research.filters.find_by(option: @option)
+    @filter.destroy
+    set_display
+    respond_to do |format|
+      format.html
+      format.text { render partial: 'filters/filters_content', locals: { research: @research, grouped_options: @grouped_options }, formats: [:html] }
+    end
   end
-
-  private
 
   def filter_params
     params.require(:filter).permit(:option)
@@ -36,5 +50,10 @@ class FiltersController < ApplicationController
 
   def set_research
     @research = Research.find(params[:research_id])
+  end
+
+  def set_display
+    @grouped_options = @research.options.group_by(&:feature_id)
+    @grouped_options = @grouped_options.transform_keys! { |key| Feature.find(key) }
   end
 end

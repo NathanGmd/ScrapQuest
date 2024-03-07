@@ -5,18 +5,33 @@
     </div>
     <div class="feature-options d-flex">
       <% feature.options.each do |option| %>
-        <div class="px-2">
-          <%= simple_form_for [@research, @filter], html: { data: {options_target: "form"}} do |f| %>
-            <%= f.hidden_field :option, value: option.value %>
-            <%= f.button :submit,
-                         option.value,
-                         class: "btn btn-default btn-info",
-                         data: {
-                          options_target: "btn",
-                          action: "click->options#displayOpt"
-                          } %>
-          <% end %>
-        </div>
+        <% if @research.option_ids.include?(option.id) %>
+          <div class="px-2">
+            <%= simple_form_for [@research, @filter], url: research_toggle_path(@research), html: { data: {options_target: "form"}} do |f| %>
+              <%= f.hidden_field :option, value: option.value %>
+              <%= f.button :submit,
+                           option.value,
+                           class: "btn btn-default btn-secondary",
+                           data: {
+                            options_target: "btn",
+                            action: "click->options#displayOpt"
+                            } %>
+            <% end %>
+          </div>
+        <% else %>
+          <div class="px-2">
+            <%= simple_form_for [@research, @filter], url: research_toggle_path(@research), html: { data: {options_target: "form"}} do |f| %>
+              <%= f.hidden_field :option, value: option.value %>
+              <%= f.button :submit,
+                           option.value,
+                           class: "btn btn-default btn-info",
+                           data: {
+                            options_target: "btn",
+                            action: "click->options#displayOpt"
+                            } %>
+            <% end %>
+          </div>
+        <% end %>
       <% end %>
     </div>
   <% end %>
