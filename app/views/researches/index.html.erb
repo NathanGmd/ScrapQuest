@@ -5,19 +5,17 @@
   <div class="row">
     <% @researches_grouped.each do |research_grouped| %>
       <div class="col-12 mb-4">
-        <div class="border p-4 rounded shadow position-relative">
+        <div class="border p-4 rounded shadow">
           <div class="d-flex justify-content-between">
-            <div>
-              <h2>Database: <%= research_grouped[:research].id %></h2>
-              <p>Nombre de prospects trouvés: <%= research_grouped[:research].prospect_count %></p>
-            </div>
-            <%= link_to "Access Content", research_path(research_grouped[:research]), class: "btn btn-primary position-absolute", style: "right: 30px; top: 25px;" %>
+            <h2>Database: <%= research_grouped[:research].id %></h2>
+            <%= link_to "Access Content", research_path(research_grouped[:research]), class: "btn btn-primary" %>
           </div>
-
-          <div class="d-flex align-items-center flex-wrap mb-3">
+          <p>Number of leads found: <%= research_grouped[:research].prospect_count %></p>
+          <div class="d-flex flex-row flex-wrap" style="overflow-x: auto;">
             <% research_grouped[:grouped_options].each do |feature, options| %>
-              <span class="me-3" style="font-weight: bold; color: #343a40;"><%= feature.title %>:</span>
-              <span class="me-3"><%= options.map { |option| option.value }.join(', ') %></span>
+              <div class="m-2 p-2 border"  style="overflow-x: auto;">
+                <strong><%= feature.title %>:</strong> <%= options.map { |option| option.value }.join(', ') %>
+              </div>
             <% end %>
           </div>
         </div>

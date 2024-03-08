@@ -39,7 +39,7 @@
               </tr>
             </thead>
             <tbody>
-              <% @prospects.each do |prospect| %>
+              <% @prospects.limit(5).each do |prospect| %>
                 <tr>
                   <td><%= prospect.first_name %></td>
                   <td><%= prospect.last_name %></td>

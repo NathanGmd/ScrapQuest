@@ -32,12 +32,3 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
   });
-
-
-
-
-
-
-
-
-
