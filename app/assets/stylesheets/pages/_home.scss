@@ -211,6 +211,13 @@
   margin: 0;
 }
 
+.second-bot-bot-card h2 {
+  font-size: 30px;
+  font-weight: bold;
+  color: #333333;
+  margin: 0;
+}
+
 .graph-container {
   width: 300px;
   margin-left: 5px;
@@ -281,4 +288,11 @@
   100% {
     transform: translateY(-10%);
   }
+}
+
+.docanvas {
+  max-width: 600px;
+  max-height: 300px;
+  width: 100%;
+  height: auto; 
 }
