@@ -1,0 +1,57 @@
+.main-container_edit {
+  margin: 40px;
+  font-family: 'Arial', sans-serif;
+}
+
+.title-section_edit .main-title_edit {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.cards-container_edit {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card_edit {
+  width: 22%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.card-title_edit {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.card-list_edit {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.card-item_edit {
+  text-align: center;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.select-button_edit {
+  text-decoration: none;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  margin-top: auto;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+}
+
+.select-button_edit:hover {
+  background-color: #0056b3;
+}
