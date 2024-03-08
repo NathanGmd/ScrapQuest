@@ -27,4 +27,3 @@ let bar_chart = new Chart(bar_ctx, {
         }
     }
 });
-
