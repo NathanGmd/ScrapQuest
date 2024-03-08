@@ -1,9 +1,14 @@
+    <% 4.times do |i| %>
       <div class="card_edit">
-        <h2 class="card-title_edit">Prospects</h2>
+        <h2 class="card-title_edit">Prospects <%= @prospect_size.size %></h2>
         <ul class="card-list_edit">
           <% @research.options.each do |option| %>
-            <li class="card-item_edit"><%= option.value %></li>
+            <li class="card-item_edit"><%= option.feature.title %> : <%= option.value %></li>
           <% end %>
         </ul>
-        <%= link_to "Select", research_path(@research), class: "select-button_edit" %>
+        <%= simple_form_for @research, url: research_path(@research) do |f|%>
+          <%= f.hidden_field :prospect_count, value: @prospect_size.size %>
+          <%= f.button :submit, "select", class: "select-button_edit" %>
+        <% end %>
       </div>
+    <% end %>
