@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-  let colors = ['#FFAD77','#28a745','#333333','#c3e6cb','#dc3545','#6c757d'];
-
+  let colors = ['#FFAD77','#28A745','#333333','#C3E6CB','#DC3545','#6C757D'];
   let chLine = document.getElementById("chLine");
   let chartData = {
       labels: ["07/03", "08/03", "09/03", "10/03", "11/03", "12/03", "13/03"],
@@ -27,9 +26,9 @@ document.addEventListener('DOMContentLoaded', function() {
               },
               legend: {
                   display: false
-              },
+              },                
               responsive: true
-          }
+              }
       });
   }
 });

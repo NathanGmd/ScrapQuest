@@ -1,6 +1,7 @@
 <script src="<%= asset_path('countup.js') %>"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="<%= asset_path('controllers/graph_controller.js') %>"></script>
+<script src="<%= asset_path('controllers/camembert_controller.js') %>"></script>
  <div class="globaldashboard">
   <div class="dashboardtop">
 
@@ -52,8 +53,10 @@
       <canvas id="chLine"></canvas>
     </div>
     <div class="second-bot-bot-card">
-      <h2>Our total scrapped data :</h2>
-      <canvas id="chLine"></canvas>
+      <h2>From where we scrap data :</h2>
+      <div class="canvas-container">
+        <canvas id="bar-chart" class="docanvas"></canvas>
+      </div>
     </div>
   </div>
 </div>
