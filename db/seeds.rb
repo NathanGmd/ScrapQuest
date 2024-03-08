@@ -7,17 +7,17 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-
+require 'faker'
 puts "progress :"
 
-Prospect.destroy_all
-Feature.destroy_all
-Option.destroy_all
 Item.destroy_all
 Filter.destroy_all
+Option.destroy_all
+Prospect.destroy_all
+Feature.destroy_all
 Research.destroy_all
 
-TYPES = %w[gender profession study_lvl nationality language age marital_status city children]
+TYPES = %w[gender profession study_lvl language age marital_status city children]
 TYPE = {
   "gender" => %w[male female],
   "profession" => %w[baker builder manager commercial taillor],
@@ -29,12 +29,15 @@ TYPE = {
   "children" => %w[yes no]
 }
 
-Prospect.create(first_name: "John", last_name: "Doe", address: "158 avenue de la victoire", email: "john.doe@gmail.com")
-Prospect.create(first_name: "Jane", last_name: "Dupont", address: "35 cours Victor", email: "jane.dupont@gmail.com")
-Prospect.create(first_name: "Camille", last_name: "Ella", address: "132 cours alsace loraine", email: "camille.elladoe@gmail.com")
-Prospect.create(first_name: "Ellias", last_name: "akir", address: "26 rue des petits poies", email: "ellias.akir@gmail.com")
-Prospect.create(first_name: "Justine", last_name: "maunier", address: "145 rue des routes", email: "Justine.maunier@gmail.com")
-
+1500.times do
+  newprospect = Prospect.new(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    address: Faker::Address.full_address
+  )
+  newprospect.email = "#{newprospect.last_name}.#{newprospect.first_name}@gmail.com"
+  newprospect.save
+end
 puts "20%"
 
 TYPES.each do |t|
@@ -52,7 +55,15 @@ end
 
 puts "70%"
 
-30.times do
+Prospect.all.each do |prospect|
+  Item.create(
+    prospect: prospect,
+    feature: Feature.find_by(title: "gender"),
+    option: Option.where({ feature: Feature.find_by(title: "gender") }).sample
+  )
+end
+
+6000.times do
   item = Item.new(
     prospect: Prospect.all.sample,
     feature: Feature.all.sample

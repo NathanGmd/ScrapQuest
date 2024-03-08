@@ -33,8 +33,10 @@ class ResearchesController < ApplicationController
   end
 
   def edit
-    @research = Research.find(params[:id])
     @research = current_user.researches.find(params[:id])
+    option_id = @research.option_ids
+    @prospect_list = Prospect.joins(:items).where(items: { option_id: option_id }).group("prospects.id").having('COUNT(DISTINCT items.option_id) = ?', option_id.size)
+    @prospect_size = @prospect_list.size
   end
 
   private

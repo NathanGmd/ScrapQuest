@@ -1,7 +1,9 @@
-  <div class="card mb-2">
-    <img src=${element.Poster} class="card-img-top" alt=${element.Title}>
-    <div class="card-body">
-      <span class="badge bg-primary mb-2">${element.Year}</span>
-      <h5 class="card-title">${element.Title}</h5>
-    </div>
-  </div>
+      <div class="card_edit">
+        <h2 class="card-title_edit">Prospects</h2>
+        <ul class="card-list_edit">
+          <% @research.options.each do |option| %>
+            <li class="card-item_edit"><%= option.value %></li>
+          <% end %>
+        </ul>
+        <%= link_to "Select", research_path(@research), class: "select-button_edit" %>
+      </div>
