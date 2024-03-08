@@ -9,7 +9,7 @@ let bar_chart = new Chart(bar_ctx, {
     data: {
         labels: ["LinkedIn", "Facebook", "Instagram", "LeBonCoin", "Indeed"],
         datasets: [{
-            label: '# of Votes',
+            label: '',
             data: [80, 50, 35, 30, 24],
 						backgroundColor: purple_orange_gradient,
 						hoverBackgroundColor: purple_orange_gradient,
