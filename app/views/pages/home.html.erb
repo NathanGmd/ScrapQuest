@@ -3,9 +3,8 @@
 <script src="<%= asset_path('controllers/graph_controller.js') %>"></script>
  <div class="globaldashboard">
   <div class="dashboardtop">
-    <div class="top-button">Your database</div>
-    <%= link_to "nouevlle base de ndonnées", "/researches", class: "left-box", data: {turbo_method: :post} %>
-    <div class="top-button">New database</div>
+    <%= link_to "Yours databases", researches_path, class: "top-button" %>
+    <%= link_to "New database", "/researches", class: "top-button", data: {turbo_method: :post} %>
     <div class="top-button">Your profile</div>
   </div>
   <div class="dashboardbottom">
