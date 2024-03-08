@@ -1,4 +1,3 @@
-document.addEventListener('DOMContentLoaded', function() {
   function renderChart() {
       let colors = ['#FFAD77','#28a745','#333333','#c3e6cb','#dc3545','#6c757d'];
 
@@ -34,34 +33,3 @@ document.addEventListener('DOMContentLoaded', function() {
           });
       }
   }
-
-  if (sessionStorage.getItem('chartData')) {
-      let chartData = JSON.parse(sessionStorage.getItem('chartData'));
-      let chLine = document.getElementById("chLine");
-      if (chLine) {
-          chLine.innerHTML = '';
-          new Chart(chLine, {
-              type: 'line',
-              data: chartData,
-              options: {
-                  scales: {
-                    xAxes: [{
-                      ticks: {
-                          beginAtZero: false
-                      }
-                  }]
-                  },
-                  legend: {
-                      display: false
-                  },
-                  responsive: true
-              }
-          });
-      }
-  } else {
-      renderChart();
-      window.addEventListener('beforeunload', function() {
-          sessionStorage.setItem('chartData', JSON.stringify(chartData));
-      });
-  }
-});

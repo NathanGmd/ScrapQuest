@@ -4,8 +4,10 @@
 <script src="<%= asset_path('controllers/camembert_controller.js') %>"></script>
  <div class="globaldashboard">
   <div class="dashboardtop">
-    <div class="top-button">Your database</div>
-    <div class="top-button">New database</div>
+
+    <%= link_to "Yours databases", researches_path, class: "top-button" %>
+    <%= link_to "New database", "/researches", class: "top-button", data: {turbo_method: :post} %>
+
     <div class="top-button">Your profile</div>
   </div>
   <div class="dashboardbottom">
@@ -14,7 +16,7 @@
       <p class="center-text-left-card">You've generated</p>
       <div class="countup" id="countup">0</div>
       <p class="center-text-left-card" id="prospects-bold">PROSPECTS</p>
-    </div>    
+    </div>
     <div class="middle-bot-card">
       <h2>Our Updates :</h2>
       <div class="update-box">Update n°1</div>

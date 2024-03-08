@@ -1,0 +1,18 @@
+<div class="main-container_edit">
+  <div class="title-section_edit">
+    <h1 class="main-title_edit">Choisissez votre formule</h1>
+  </div>
+  <div class="cards-container_edit">
+    <% 4.times do |i| %>
+      <div class="card_edit">
+        <h2 class="card-title_edit"><%= (i+1)*1500 %> Prospects</h2>
+        <ul class="card-list_edit">
+          <% 5.times do %>
+            <li class="card-item_edit">Item</li>
+          <% end %>
+        </ul>
+        <%= link_to "Select", research_path(@research), class: "select-button_edit" %>
+      </div>
+    <% end %>
+  </div>
+</div>
