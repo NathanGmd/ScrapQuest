@@ -25,7 +25,12 @@ class ResearchesController < ApplicationController
     @prospects = Prospect.all
     grouped_options = @research.options.group_by(&:feature_id)
     grouped_options = grouped_options.transform_keys! { |key| Feature.find(key) }
-
+    option_ids = @research.option_ids
+    @prospect_list = Prospect.joins(:items)
+                             .where(items: { option_id: option_ids })
+                             .group("prospects.id")
+                             .having('COUNT(DISTINCT items.feature_id) = ?', @research.features.uniq.size)
+    @prospects = @prospect_list
     respond_to do |format|
       format.html
       format.csv { send_prospects_csv(@prospects) }
@@ -34,9 +39,19 @@ class ResearchesController < ApplicationController
 
   def edit
     @research = current_user.researches.find(params[:id])
-    option_id = @research.option_ids
-    @prospect_list = Prospect.joins(:items).where(items: { option_id: option_id }).group("prospects.id").having('COUNT(DISTINCT items.option_id) = ?', option_id.size)
+    option_ids = @research.option_ids
+    @prospect_list = Prospect.joins(:items)
+                             .where(items: { option_id: option_ids })
+                             .group("prospects.id")
+                             .having('COUNT(DISTINCT items.feature_id) = ?', @research.features.uniq.size)
     @prospect_size = @prospect_list.size
+  end
+
+  def update
+    set_research
+    @user = current_user
+    @research.update(prospect_params)
+    redirect_to research_path(@research)
   end
 
   private
@@ -50,5 +65,13 @@ class ResearchesController < ApplicationController
     end
 
     send_data csv_data, filename: "prospects-#{Date.today}.csv"
+  end
+
+  def set_research
+    @research = Research.find(params[:id])
+  end
+
+  def prospect_params
+    params.require(:research).permit(:prospect_count)
   end
 end
