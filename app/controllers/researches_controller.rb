@@ -37,6 +37,7 @@ class ResearchesController < ApplicationController
     option_id = @research.option_ids
     @prospect_list = Prospect.joins(:items).where(items: { option_id: option_id }).group("prospects.id").having('COUNT(DISTINCT items.option_id) = ?', option_id.size)
     @prospect_size = @prospect_list.size
+    raise
   end
 
   private

@@ -44,7 +44,7 @@ TYPES.each do |t|
   Feature.create(title: t)
 end
 
-puts "40%"
+puts "30%"
 
 TYPE.each do |t|
   test = t[1]
@@ -53,7 +53,7 @@ TYPE.each do |t|
   end
 end
 
-puts "70%"
+puts "40%"
 
 Prospect.all.each do |prospect|
   Item.create(
@@ -63,13 +63,77 @@ Prospect.all.each do |prospect|
   )
 end
 
-6000.times do
-  item = Item.new(
-    prospect: Prospect.all.sample,
-    feature: Feature.all.sample
+puts "50%"
+
+prospect_seed = Prospect.all.sample(1000)
+prospect_seed.each do |prospect|
+  Item.create(
+    prospect: prospect,
+    feature: Feature.find_by(title: "profession"),
+    option: Option.where({ feature: Feature.find_by(title: "profession") }).sample
   )
-  item.option = item.feature.options.sample
-  item.save
+end
+
+puts "60%"
+
+prospect_seed = Prospect.all.sample(1000)
+prospect_seed.each do |prospect|
+  Item.create(
+    prospect: prospect,
+    feature: Feature.find_by(title: "study_lvl"),
+    option: Option.where({ feature: Feature.find_by(title: "study_lvl") }).sample
+  )
+end
+
+puts "70%"
+
+prospect_seed = Prospect.all.sample(1000)
+prospect_seed.each do |prospect|
+  Item.create(
+    prospect: prospect,
+    feature: Feature.find_by(title: "language"),
+    option: Option.where({ feature: Feature.find_by(title: "language") }).sample
+  )
+end
+
+puts "80%"
+
+prospect_seed = Prospect.all.sample(1000)
+prospect_seed.each do |prospect|
+  Item.create(
+    prospect: prospect,
+    feature: Feature.find_by(title: "age"),
+    option: Option.where({ feature: Feature.find_by(title: "age") }).sample
+  )
+end
+
+puts "90%"
+
+prospect_seed = Prospect.all.sample(1000)
+prospect_seed.each do |prospect|
+  Item.create(
+    prospect: prospect,
+    feature: Feature.find_by(title: "marital_status"),
+    option: Option.where({ feature: Feature.find_by(title: "marital_status") }).sample
+  )
+end
+
+prospect_seed = Prospect.all.sample(1000)
+prospect_seed.each do |prospect|
+  Item.create(
+    prospect: prospect,
+    feature: Feature.find_by(title: "city"),
+    option: Option.where({ feature: Feature.find_by(title: "city") }).sample
+  )
+end
+
+prospect_seed = Prospect.all.sample(1000)
+prospect_seed.each do |prospect|
+  Item.create(
+    prospect: prospect,
+    feature: Feature.find_by(title: "children"),
+    option: Option.where({ feature: Feature.find_by(title: "children") }).sample
+  )
 end
 
 puts "done"
