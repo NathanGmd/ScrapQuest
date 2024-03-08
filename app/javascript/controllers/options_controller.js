@@ -4,13 +4,27 @@ import { Controller } from "@hotwired/stimulus"
 // data-options-target
 // data-action="click->options#displaybutton"
 export default class extends Controller {
-  static targets = ["btn"];
+  static targets = ["btn", "form", "result"];
   connect() {
   }
 
-  toggleBtn() {
-    // event.preventDefault()
-    this.btnTarget.classList.toggle("btn-info")
-    this.btnTarget.classList.toggle("btn-secondary")
+  displayOpt(event) {
+    const btn = event.target
+    event.preventDefault()
+    btn.classList.toggle("btn-info")
+    btn.classList.toggle("btn-secondary")
+    const form = btn.closest('form')
+    const url = btn.closest('form').action
+    fetch(url, {
+      method: "POST",
+      headers: { "Accept": "text/plain" },
+      body: new FormData(form)
+  })
+      .then(response => response.text())
+      .then((data) => {
+        this.resultTarget.outerHTML = data
+    })
+
   }
+
 }
