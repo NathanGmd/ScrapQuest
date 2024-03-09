@@ -29,7 +29,7 @@ TYPE = {
   "children" => %w[yes no]
 }
 
-1500.times do
+5040.times do
   newprospect = Prospect.new(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
@@ -65,7 +65,7 @@ end
 
 puts "50%"
 
-prospect_seed = Prospect.all.sample(1000)
+prospect_seed = Prospect.all.sample(4000)
 prospect_seed.each do |prospect|
   Item.create(
     prospect: prospect,
@@ -76,7 +76,7 @@ end
 
 puts "60%"
 
-prospect_seed = Prospect.all.sample(1000)
+prospect_seed = Prospect.all.sample(4000)
 prospect_seed.each do |prospect|
   Item.create(
     prospect: prospect,
@@ -87,7 +87,7 @@ end
 
 puts "70%"
 
-prospect_seed = Prospect.all.sample(1000)
+prospect_seed = Prospect.all.sample(4000)
 prospect_seed.each do |prospect|
   Item.create(
     prospect: prospect,
@@ -98,7 +98,7 @@ end
 
 puts "80%"
 
-prospect_seed = Prospect.all.sample(1000)
+prospect_seed = Prospect.all.sample(4000)
 prospect_seed.each do |prospect|
   Item.create(
     prospect: prospect,
@@ -109,7 +109,7 @@ end
 
 puts "90%"
 
-prospect_seed = Prospect.all.sample(1000)
+prospect_seed = Prospect.all.sample(4000)
 prospect_seed.each do |prospect|
   Item.create(
     prospect: prospect,
@@ -118,7 +118,7 @@ prospect_seed.each do |prospect|
   )
 end
 
-prospect_seed = Prospect.all.sample(1000)
+prospect_seed = Prospect.all.sample(4000)
 prospect_seed.each do |prospect|
   Item.create(
     prospect: prospect,
@@ -127,7 +127,7 @@ prospect_seed.each do |prospect|
   )
 end
 
-prospect_seed = Prospect.all.sample(1000)
+prospect_seed = Prospect.all.sample(4000)
 prospect_seed.each do |prospect|
   Item.create(
     prospect: prospect,
