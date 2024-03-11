@@ -1,11 +1,16 @@
-<h1>Filters#index</h1>
-
+<div data-controller="category">
 <div class="index-container d-flex" data-controller="options">
-  <div class="index-container-left w-75">
+  <div class="index_container-left">
+    <h2>Categories :</h2>
+      <%= render 'filters/features_display' %>
+  </div>
+  <div class="index-container-middle">
+    <h2>Your selected categories :</h2>
       <%= render 'filters/form_filter' %>
   </div>
-  <div class="index-container-right w-25 p-2 border h-auto m-2">
-    <h2>Vos features/options</h2>
+  <div class="index-container-right">
+    <h2>Your selected options :</h2>
       <%= render 'filters/filters_content', research: @research, grouped_options: @grouped_options %>
   </div>
+</div>
 </div>

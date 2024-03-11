@@ -7,17 +7,17 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-
+require 'faker'
 puts "progress :"
 
-Prospect.destroy_all
-Feature.destroy_all
-Option.destroy_all
 Item.destroy_all
 Filter.destroy_all
+Option.destroy_all
+Prospect.destroy_all
+Feature.destroy_all
 Research.destroy_all
 
-TYPES = %w[gender profession study_lvl nationality language age marital_status city children]
+TYPES = %w[gender profession study_lvl language age marital_status city children]
 TYPE = {
   "gender" => %w[male female],
   "profession" => %w[baker builder manager commercial taillor],
@@ -29,19 +29,22 @@ TYPE = {
   "children" => %w[yes no]
 }
 
-Prospect.create(first_name: "John", last_name: "Doe", address: "158 avenue de la victoire", email: "john.doe@gmail.com")
-Prospect.create(first_name: "Jane", last_name: "Dupont", address: "35 cours Victor", email: "jane.dupont@gmail.com")
-Prospect.create(first_name: "Camille", last_name: "Ella", address: "132 cours alsace loraine", email: "camille.elladoe@gmail.com")
-Prospect.create(first_name: "Ellias", last_name: "akir", address: "26 rue des petits poies", email: "ellias.akir@gmail.com")
-Prospect.create(first_name: "Justine", last_name: "maunier", address: "145 rue des routes", email: "Justine.maunier@gmail.com")
-
+5040.times do
+  newprospect = Prospect.new(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    address: Faker::Address.full_address
+  )
+  newprospect.email = "#{newprospect.last_name}.#{newprospect.first_name}@gmail.com"
+  newprospect.save
+end
 puts "20%"
 
 TYPES.each do |t|
   Feature.create(title: t)
 end
 
-puts "40%"
+puts "30%"
 
 TYPE.each do |t|
   test = t[1]
@@ -50,15 +53,87 @@ TYPE.each do |t|
   end
 end
 
+puts "40%"
+
+Prospect.all.each do |prospect|
+  Item.create(
+    prospect: prospect,
+    feature: Feature.find_by(title: "gender"),
+    option: Option.where({ feature: Feature.find_by(title: "gender") }).sample
+  )
+end
+
+puts "50%"
+
+prospect_seed = Prospect.all.sample(4000)
+prospect_seed.each do |prospect|
+  Item.create(
+    prospect: prospect,
+    feature: Feature.find_by(title: "profession"),
+    option: Option.where({ feature: Feature.find_by(title: "profession") }).sample
+  )
+end
+
+puts "60%"
+
+prospect_seed = Prospect.all.sample(4000)
+prospect_seed.each do |prospect|
+  Item.create(
+    prospect: prospect,
+    feature: Feature.find_by(title: "study_lvl"),
+    option: Option.where({ feature: Feature.find_by(title: "study_lvl") }).sample
+  )
+end
+
 puts "70%"
 
-30.times do
-  item = Item.new(
-    prospect: Prospect.all.sample,
-    feature: Feature.all.sample
+prospect_seed = Prospect.all.sample(4000)
+prospect_seed.each do |prospect|
+  Item.create(
+    prospect: prospect,
+    feature: Feature.find_by(title: "language"),
+    option: Option.where({ feature: Feature.find_by(title: "language") }).sample
   )
-  item.option = item.feature.options.sample
-  item.save
+end
+
+puts "80%"
+
+prospect_seed = Prospect.all.sample(4000)
+prospect_seed.each do |prospect|
+  Item.create(
+    prospect: prospect,
+    feature: Feature.find_by(title: "age"),
+    option: Option.where({ feature: Feature.find_by(title: "age") }).sample
+  )
+end
+
+puts "90%"
+
+prospect_seed = Prospect.all.sample(4000)
+prospect_seed.each do |prospect|
+  Item.create(
+    prospect: prospect,
+    feature: Feature.find_by(title: "marital_status"),
+    option: Option.where({ feature: Feature.find_by(title: "marital_status") }).sample
+  )
+end
+
+prospect_seed = Prospect.all.sample(4000)
+prospect_seed.each do |prospect|
+  Item.create(
+    prospect: prospect,
+    feature: Feature.find_by(title: "city"),
+    option: Option.where({ feature: Feature.find_by(title: "city") }).sample
+  )
+end
+
+prospect_seed = Prospect.all.sample(4000)
+prospect_seed.each do |prospect|
+  Item.create(
+    prospect: prospect,
+    feature: Feature.find_by(title: "children"),
+    option: Option.where({ feature: Feature.find_by(title: "children") }).sample
+  )
 end
 
 puts "done"
