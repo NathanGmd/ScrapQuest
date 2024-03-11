@@ -1,14 +1,16 @@
-    <% 4.times do |i| %>
-      <div class="card_edit">
-        <h2 class="card-title_edit">Prospects <%= @prospect_size.size %></h2>
+<% [0.25, 0.50, 0.75, 1].each_with_index do |multiplier, index| %>
+  <% prospect_count = (@prospect_size.size * multiplier).to_i %>
+    <div class="card_edit">
+      <h2 class="card-title_edit">Pour <%= prospect_count %> Prospects</h2>
         <ul class="card-list_edit">
           <% @research.options.each do |option| %>
-            <li class="card-item_edit"><%= option.feature.title %> : <%= option.value %></li>
+            <li class="card-item_edit border-bottom"><%= option.feature.title %> : <%= option.value %></li>
           <% end %>
         </ul>
-        <%= simple_form_for @research, url: research_path(@research) do |f|%>
-          <%= f.hidden_field :prospect_count, value: @prospect_size.size %>
-          <%= f.button :submit, "select", class: "select-button_edit" %>
-        <% end %>
+        <p>price : <%= 2 * @prospect_size.size %>$</p>
+          <%= simple_form_for @research, url: research_path(@research) do |f|%>
+            <%= f.hidden_field :prospect_count, value: @prospect_size.size %>
+            <%= f.button :submit, "select this formula", class: "select-button_edit" %>
+          <% end %>
       </div>
-    <% end %>
+  <% end %>
