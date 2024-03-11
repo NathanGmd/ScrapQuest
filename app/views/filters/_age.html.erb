@@ -1,0 +1,6 @@
+<div>
+<%= simple_form_for [@research, @filter], url: research_toggle_path(@research), html: { data: {options_target: "form"}} do |f| %>
+                <%= f.input :option, value: option.value %>
+                <%= f.button :submit %>
+<% end %>
+</div>

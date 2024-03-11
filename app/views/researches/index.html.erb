@@ -3,23 +3,25 @@
     <h1 class="text-center">Your Databases</h1>
   </div>
   <div class="row">
-    <% @researches_grouped.each do |research_grouped| %>
-      <div class="col-12 mb-4">
-        <div class="border p-4 rounded shadow">
-          <div class="d-flex justify-content-between">
-            <h2>Database: <%= research_grouped[:research].id %></h2>
-            <%= link_to "Access Content", research_path(research_grouped[:research]), class: "btn btn-primary" %>
-          </div>
-          <p>Number of leads found: <%= research_grouped[:research].prospect_count %></p>
-          <div class="d-flex flex-row flex-wrap" style="overflow-x: auto;">
-            <% research_grouped[:grouped_options].each do |feature, options| %>
-              <div class="m-2 p-2 border"  style="overflow-x: auto;">
-                <strong><%= feature.title %>:</strong> <%= options.map { |option| option.value }.join(', ') %>
-              </div>
-            <% end %>
+    <% @researches_grouped.each_with_index do |research_grouped, index| %>
+      <% if research_grouped[:research].prospect_count != nil %>
+        <div class="col-12 mb-4">
+          <div class="border p-4 rounded shadow">
+            <div class="d-flex justify-content-between">
+              <h2>Database: <%= index %></h2>
+              <%= link_to "Access Content", research_path(research_grouped[:research]), class: "btn btn-primary" %>
+            </div>
+            <p>Number of leads found: <%= research_grouped[:research].prospect_count %></p>
+            <div class="d-flex flex-row flex-wrap" style="overflow-x: auto;">
+              <% research_grouped[:grouped_options].each do |feature, options| %>
+                <div class="m-2 p-2 border"  style="overflow-x: auto;">
+                  <strong><%= feature.title %>:</strong> <%= options.map { |option| option.value }.join(', ') %>
+                </div>
+              <% end %>
+            </div>
           </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
   </div>
 </div>
