@@ -11,8 +11,8 @@ export default class extends Controller {
   displayOpt(event) {
     const btn = event.target
     event.preventDefault()
-    btn.classList.toggle("btn-info")
-    btn.classList.toggle("btn-secondary")
+    btn.classList.toggle("btn-background-available")
+    btn.classList.toggle("btn-background-unavailable")
     const form = btn.closest('form')
     const url = btn.closest('form').action
     fetch(url, {

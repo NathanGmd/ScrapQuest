@@ -1,0 +1,8 @@
+<% @features.each do |feature|%>
+    <button class="update-features-box"
+            data-category-target="title"
+            data-action="click->category#displayCard"
+            data-category-title-value="<%= feature.title %>">
+            <%= feature.title %>
+    </button>
+<% end %>
