@@ -13,7 +13,13 @@
         <h4>Filtres:</h4>
         <ul class="researchesshow list-group">
           <% grouped_options = @research.filters.includes(:feature, :option).group_by { |filter| filter.feature.title }.transform_values do |filters|
-               filters.map { |filter| filter.option.value }.uniq
+                filters.map do |filter|
+                  if filter.option.present?
+                    filter.option.value
+                  else
+                    "18 years old to 75 years old"
+                  end
+                end.uniq
              end
           %>
           <% grouped_options.each do |feature_title, options_values| %>
