@@ -50,7 +50,7 @@
   width: calc(33.33% - 35px);
   background-color: #f9f9f9;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 25px;
   box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.1);
   border: 1px solid #f0f0f0f3;
 }
@@ -65,7 +65,7 @@
   width: calc(33.33% - 35px);
   background-color: #ffffff;
   padding: 30px;
-  border-radius: 15px;
+  border-radius: 25px;
   box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
   margin-left: 25px;
@@ -79,7 +79,7 @@
   width: 45%;
   background-color: #ffffff;
   padding: 30px;
-  border-radius: 15px;
+  border-radius: 25px;
   box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
   margin-left: 5%;
@@ -94,7 +94,7 @@
   width: 45%;
   background-color: #ffffff;
   padding: 30px;
-  border-radius: 15px;
+  border-radius: 25px;
   box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
   margin-right: 5%;
@@ -116,7 +116,7 @@
   width: calc(33.33% - 35px);
   background-color: #ffffff;
   padding: 30px;
-  border-radius: 15px;
+  border-radius: 25px;
   box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
 }
@@ -136,7 +136,7 @@
   width: calc(33.33% - 35px);
   background-color: #ffffff;
   padding: 30px;
-  border-radius: 15px;
+  border-radius: 25px;
   box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
   margin-right: 25px;
@@ -185,7 +185,7 @@
   background-color: #ffffff;
   color: #333333;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 25px;
   margin-top: 20px;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -233,7 +233,7 @@
 .bar {
   position: relative;
   height: 30px;
-  border-radius: 15px;
+  border-radius: 25px;
   overflow: hidden;
   background: linear-gradient(to right, #ff7e5f, #feb47b);
 }
@@ -291,6 +291,13 @@
 }
 
 .docanvas {
+  max-width: 600px;
+  max-height: 300px;
+  width: 100%;
+  height: auto; 
+}
+
+.bot-bot-card canvas {
   max-width: 600px;
   max-height: 300px;
   width: 100%;
