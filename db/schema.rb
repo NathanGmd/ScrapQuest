@@ -24,8 +24,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_05_102043) do
   end
 
   create_table "filters", force: :cascade do |t|
-    t.integer "value"
-    t.bigint "option_id", null: false
+    t.integer "max"
+    t.integer "min"
+    t.bigint "option_id"
     t.bigint "research_id", null: false
     t.bigint "feature_id", null: false
     t.datetime "created_at", null: false
@@ -36,8 +37,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_05_102043) do
   end
 
   create_table "items", force: :cascade do |t|
+    t.integer "value"
     t.bigint "feature_id", null: false
-    t.bigint "option_id", null: false
+    t.bigint "option_id"
     t.bigint "prospect_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

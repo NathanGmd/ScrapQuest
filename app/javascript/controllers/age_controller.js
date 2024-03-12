@@ -2,17 +2,16 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="age"
 export default class extends Controller {
-  static targets = ["form"]
+  static targets = ["form", "result"]
 
   connect() {
   }
 
   ageSelect(event) {
+    const btn = event.target
     event.preventDefault()
-    console.log("coucou from age controller")
-    console.log(this.formTarget)
-    const url = this.formTarget.action
-    debugger
+    const form = this.formTarget
+    const url = btn.closest('form').action
     fetch(url, {
       method: "POST",
       headers: { "Accept": "text/plain" },

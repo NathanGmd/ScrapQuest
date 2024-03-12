@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :researches do
     resources :filters, except: :destroy
     post :toggle, to: 'filters#toggle'
+    post :toggle_age, to: 'filters#toggle_age'
   end
   resources :filters, only: []
 

@@ -103,7 +103,7 @@ prospect_seed.each do |prospect|
   Item.create(
     prospect: prospect,
     feature: Feature.find_by(title: "age"),
-    option: Option.where({ feature: Feature.find_by(title: "age") }).sample
+    value: 35
   )
 end
 
