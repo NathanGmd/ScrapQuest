@@ -1,32 +1,81 @@
 .main-container_edit {
-  margin: 40px;
-  font-family: 'Arial', sans-serif;
+  margin: 20px 40px 20px 40px;
+  font-family: 'Helvetica Neue', sans-serif;
+  animation: fadeIn 2s ease;
 }
 
 .title-section_edit .main-title_edit {
   text-align: center;
   margin-bottom: 30px;
+  font-size: 42px;
+  font-weight: 600;
+  color: #333;
+  animation: slideInDown 1s ease;
 }
 
 .cards-container_edit {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  animation: pulse 2s ease;
 }
 
 .card_edit {
-  width: 22%;
+  width: calc(25% - 20px);
+  margin-bottom: 40px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   border-radius: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
+  transition: transform 0.3s ease;
+  position: relative;
+  animation: fadeInUp 1s ease;
+}
+
+.card_edit::before,
+.card_edit::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background: linear-gradient(45deg, rgba(255, 153, 0, 0.9), rgba(255, 204, 102, 0.6));
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  animation: glow 2s infinite;
+}
+
+.card_edit::before {
+  top: 10px;
+  left: 10px;
+  transform: rotate(3deg);
+}
+
+.card_edit::after {
+  bottom: 10px;
+  right: 10px;
+  transform: rotate(-3deg);
+}
+
+.card_edit:hover {
+  transform: translateY(-10px);
+}
+
+.card_edit:hover::before,
+.card_edit:hover::after {
+  opacity: 1;
 }
 
 .card-title_edit {
-  font-size: 20px;
+  font-size: 24px;
   color: #333;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  animation: pulseText 2s ease;
+  font-family: 'Georgia', serif;
 }
 
 .card-list_edit {
@@ -38,20 +87,51 @@
 .card-item_edit {
   text-align: center;
   padding: 10px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #000000;
 }
 
 .select-button_edit {
   text-decoration: none;
-  background-color: #007bff;
-  color: #fff;
+  background-color: #ffad77;
+  color: #ffffff;
   padding: 10px 20px;
   margin-top: auto;
-  border-radius: 5px;
+  border-radius: 7px;
   cursor: pointer;
   border: none;
+  transition: background-color 0.3s ease;
+  font-family: 'Arial', sans-serif;
 }
 
 .select-button_edit:hover {
-  background-color: #0056b3;
+  background-color: #ffffff;
+  color: #ffad77;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideInDown {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
+  50% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); }
+  100% { box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
+}
+
+@keyframes pulseText {
+  0% { color: #333; }
+  50% { color: #ff9854; }
+  100% { color: #333; }
 }
