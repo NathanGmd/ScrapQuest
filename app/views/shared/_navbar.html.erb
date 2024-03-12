@@ -4,25 +4,13 @@
       <%= image_tag("Infinity (1).png") %>
     <% end %>
    <% if user_signed_in? %>
-        <span class="navbar-text mx-auto">Nexus Solutions - Hugo</span>
+        <span class="fw-bold mx-auto smaller-navbar-text">Nexus Solutions - Hugo</span>
       <% end %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <% if user_signed_in? %>
-          <li class="nav-item">
-            <%= link_to "Home", root_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
-          </li>
-        <% end %>
-      </ul>
-
-
       <ul class="navbar-nav ms-auto">
         <% if user_signed_in? %>
           <li class="nav-item">

@@ -1,11 +1,8 @@
-<script src="<%= asset_path('countup.js') %>"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="<%= asset_path('controllers/graph_controller.js') %>"></script>
-<script src="<%= asset_path('controllers/camembert_controller.js') %>"></script>
  <div class="globaldashboard">
   <div class="dashboardtop">
 
-    <%= link_to "Yours databases", researches_path, class: "top-button" %>
+    <%= link_to "Your databases", researches_path, class: "top-button" %>
     <%= link_to "New database", "/researches", class: "top-button", data: {turbo_method: :post} %>
 
     <div class="top-button">Your profile</div>
@@ -14,7 +11,7 @@
     <div class="left-bot-card">
       <h2>Total Prospects :</h2>
       <p class="center-text-left-card">You've generated</p>
-      <div class="countup" id="countup">0</div>
+        <div class="countup" id="countup" data-controller="countup" data-countup-target="countup">0</div>
       <p class="center-text-left-card" id="prospects-bold">PROSPECTS</p>
     </div>
     <div class="middle-bot-card">
@@ -50,12 +47,14 @@
   <div class="chartbottom">
     <div class="bot-bot-card">
       <h2>Our total scrapped data :</h2>
-      <canvas id="chLine"></canvas>
+        <div style="width: 800px;">
+          <canvas id="chLine" data-controller="chart"></canvas>
+        </div>
     </div>
     <div class="second-bot-bot-card">
       <h2>From where we scrap data :</h2>
       <div class="canvas-container">
-        <canvas id="bar-chart" class="docanvas"></canvas>
+        <canvas id="bar-chart" class="docanvas" data-controller="bar-chart"></canvas>
       </div>
     </div>
   </div>

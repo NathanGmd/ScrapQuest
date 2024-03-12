@@ -1,8 +1,14 @@
+.index_container-left:hover,
+.index-container-middle:hover,
+.index-container-right:hover {
+  box-shadow: 0px 7px 10px #ffad77;
+}
+
 .index-container-middle {
   width: 50%;
   background-color: #f9f9f9;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 25px;
   box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.1);
   border: 1px solid #f0f0f0f3;
   margin: 10px;
@@ -13,18 +19,21 @@
   width: 25%;
   background-color: #f9f9f9;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 25px;
   box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.1);
   border: 1px solid #f0f0f0f3;
   margin: 10px;
+  height: 100%;
+  max-height: 100%;
 }
 
 .update-features-box {
   background-color: #ffffff;
   color: #333333;
-  padding: 5px;
-  border-radius: 10px;
-  margin-top: 10px;
+  padding: 0.8rem;
+  border-radius: 25px;
+  font-size: 2rem;
+  margin-top: 1.1rem;
   width: 100%;
   justify-content: center;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
@@ -36,13 +45,13 @@
 
 .update-features-box:hover {
   transform: translateY(-5px);
-  box-shadow: 0px 8px 20px rgb(255, 85, 0);
+  box-shadow: 0px 8px 20px #FFAD77;
 }
 
 .btn-options-box {
   color: #333333;
-  padding: 5px;
-  border-radius: 10px;
+  padding: 7px 15px;
+  border-radius: 25px;
   margin-top: 10px;
   justify-content: center;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
@@ -53,11 +62,11 @@
 
 .btn-options-box:hover {
   transform: translateY(-5px);
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.956);
+  box-shadow: 0px 5px 10px rgba(125, 125, 125, 0.956);
 }
 
 .btn-background-available {
-  background-color: #ff8c00a9;
+  background-color: #FFAD77;
 }
 
 .btn-background-unavailable {
@@ -65,12 +74,12 @@
 }
 
 .btn-options-formula-box {
-  background-color: #ff6f00;
+  background-color: #FFAD77;
   color: #333333;
   padding: 5px;
   width: 100%;
   height: 50px;
-  border-radius: 10px;
+  border-radius: 25px;
   margin-top: 10px;
   justify-content: center;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
@@ -81,17 +90,18 @@
 
 .btn-options-formula-box:hover {
   transform: translateY(-5px);
-  box-shadow: 0px 8px 20px rgba(252, 147, 62, 0.956);
+  box-shadow: 0px 8px 20px #FFAD77;
 }
 
 .feature-options {
   width: 100%;
   background-color: #f9f9f9;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 25px;
   box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.1);
   border: 1px solid #f0f0f0f3;
-  margin: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .feature-name {
@@ -121,4 +131,9 @@
   padding: 5px;
   background-color: rgb(29, 156, 35);
   color: white;
+}
+
+.bold-h2-filters {
+  font-weight: 600;
+  text-align: center;
 }

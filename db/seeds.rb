@@ -127,7 +127,6 @@ prospect_seed.each do |prospect|
   )
 end
 
-prospect_seed = Prospect.all.sample(90)
 prospect_seed.each do |prospect|
   Item.create(
     prospect: prospect,

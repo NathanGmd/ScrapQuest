@@ -2,15 +2,15 @@
 <div data-controller="category">
 <div class="index-container d-flex" data-controller="options">
   <div class="index_container-left">
-    <h2>Categories :</h2>
+    <h2 class="bold-h2-filters">Categories :</h2>
       <%= render 'filters/features_display' %>
   </div>
   <div class="index-container-middle">
-    <h2>Your selected categories :</h2>
+    <h2 class="bold-h2-filters">Your selected categories :</h2>
       <%= render 'filters/form_filter' %>
   </div>
   <div class="index-container-right">
-    <h2>Your selected options :</h2>
+    <h2 class="bold-h2-filters">Your selected filters:</h2>
       <%= render 'filters/filters_content', research: @research, grouped_options: @grouped_options %>
   </div>
 </div>
