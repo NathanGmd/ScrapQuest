@@ -109,6 +109,30 @@
   border-bottom: 1px solid black;
 }
 
+.age-box {
+  padding: 5px;
+  display: flex;
+}
+
+.filter-age {
+  display: flex;
+  display: relative;
+  border-top-left-radius:  15px;
+  border-bottom-left-radius: 15px;
+  margin-left: 10px;
+}
+
+.filter-age-years {
+  display: absolute;
+  right: 1px;
+  left: 1px;
+  margin-right: 10px;
+  height: 100%;
+  padding: 5px;
+  background-color: rgb(29, 156, 35);
+  color: white;
+}
+
 .bold-h2-filters {
   font-weight: 600;
   text-align: center;
