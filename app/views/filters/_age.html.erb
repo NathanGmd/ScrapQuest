@@ -1,6 +1,6 @@
 <%= simple_form_for [@research, @filter], url: research_toggle_age_path(@research), html: { data: {age_target: "form"}}, class: "age-box"  do |f| %>
   <%= f.input :min, as: :integer, input_html: { value: 18, min: 18 } %>
-  <span>to</span>
+  <span class="spanmargin" >to</span>
   <%= f.input :max, as: :integer, input_html: { value: 75, max: 75 } %>
   <%= f.button "button",
                class: "btnage",
