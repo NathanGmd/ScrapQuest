@@ -5,7 +5,7 @@
         <h2 data-category-target="otpdisplay"><%= feature.title %></h2>
       </div>
       <div class="feature-options-list d-flex">
-        <% if feature.title == "age" %>
+        <% if feature.title == "Age" %>
           <%= render 'filters/age' %>
         <% else %>
           <% feature.options.each do |option| %>

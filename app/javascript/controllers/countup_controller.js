@@ -6,7 +6,7 @@ export default class extends Controller {
   connect() {
     let count = 0;
     const interval = setInterval(() => {
-      count += 10;
+      count += 20;
 
       if (count >= 8000) {
         count = 8000;

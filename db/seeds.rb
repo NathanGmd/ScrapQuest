@@ -17,19 +17,19 @@ Prospect.destroy_all
 Feature.destroy_all
 Research.destroy_all
 
-TYPES = %w[gender profession study_lvl language age marital_status city children]
+TYPES = ["Gender", "Profession", "Study lvl", "Language", "Age", "Marital Status", "City", "Children"]
 TYPE = {
-  "gender" => %w[male female],
-  "profession" => %w[baker builder manager commercial taillor],
-  "study_lvl" => %w[none licence master doctorat],
-  "language" => %w[french english german spanish],
-  "age" => (18..75).to_a,
-  "marital_status" => %w[yes no],
-  "city" => %w[bordeaux paris london barcelona berlin],
-  "children" => %w[yes no]
+  "Gender" => %w[Man Woman],
+  "Profession" => ["Managers", "Professionals", "Employees", "Business Owners", "Unemployed", "Retired"],
+  "Study lvl" => %w[None Licence Master Doctorate],
+  "Language" => %w[French English German Spanish Mandarin],
+  "Age" => (18..75).to_a,
+  "Marital Status" => %w[Married Unmarried],
+  "City" => %w[Bordeaux Paris Lyon Marseille Lille Strasbourg Perpignan],
+  "Children" => %w[Yes No]
 }
 
-100.times do
+10_000.times do
   newprospect = Prospect.new(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
@@ -38,13 +38,10 @@ TYPE = {
   newprospect.email = "#{newprospect.last_name}.#{newprospect.first_name}@gmail.com"
   newprospect.save
 end
-puts "20%"
 
 TYPES.each do |t|
   Feature.create(title: t)
 end
-
-puts "30%"
 
 TYPE.each do |t|
   test = t[1]
@@ -53,86 +50,92 @@ TYPE.each do |t|
   end
 end
 
-puts "40%"
+puts "20%"
 
 Prospect.all.each do |prospect|
   Item.create(
     prospect: prospect,
-    feature: Feature.find_by(title: "gender"),
-    option: Option.where({ feature: Feature.find_by(title: "gender") }).sample
+    feature: Feature.find_by(title: "Gender"),
+    option: Option.where({ feature: Feature.find_by(title: "Gender") }).sample
+  )
+end
+
+puts "30%"
+
+prospect_seed = Prospect.all.sample(8000)
+prospect_seed.each do |prospect|
+  Item.create(
+    prospect: prospect,
+    feature: Feature.find_by(title: "Profession"),
+    option: Option.where({ feature: Feature.find_by(title: "Profession") }).sample
+  )
+end
+
+puts "40%"
+
+prospect_seed = Prospect.all.sample(8000)
+prospect_seed.each do |prospect|
+  Item.create(
+    prospect: prospect,
+    feature: Feature.find_by(title: "Study lvl"),
+    option: Option.where({ feature: Feature.find_by(title: "Study lvl") }).sample
   )
 end
 
 puts "50%"
 
-prospect_seed = Prospect.all.sample(90)
+prospect_seed = Prospect.all.sample(8000)
 prospect_seed.each do |prospect|
   Item.create(
     prospect: prospect,
-    feature: Feature.find_by(title: "profession"),
-    option: Option.where({ feature: Feature.find_by(title: "profession") }).sample
+    feature: Feature.find_by(title: "Language"),
+    option: Option.where({ feature: Feature.find_by(title: "Language") }).sample
   )
 end
 
 puts "60%"
 
-prospect_seed = Prospect.all.sample(90)
+prospect_seed = Prospect.all
 prospect_seed.each do |prospect|
   Item.create(
     prospect: prospect,
-    feature: Feature.find_by(title: "study_lvl"),
-    option: Option.where({ feature: Feature.find_by(title: "study_lvl") }).sample
+    feature: Feature.find_by(title: "Age"),
+    value: (18..75).to_a.sample
   )
 end
 
 puts "70%"
 
-prospect_seed = Prospect.all.sample(90)
+prospect_seed = Prospect.all.sample(8000)
 prospect_seed.each do |prospect|
   Item.create(
     prospect: prospect,
-    feature: Feature.find_by(title: "language"),
-    option: Option.where({ feature: Feature.find_by(title: "language") }).sample
+    feature: Feature.find_by(title: "Marital Status"),
+    option: Option.where({ feature: Feature.find_by(title: "Marital Status") }).sample
   )
 end
 
 puts "80%"
 
-prospect_seed = Prospect.all.sample(90)
+prospect_seed = Prospect.all.sample(8000)
 prospect_seed.each do |prospect|
   Item.create(
     prospect: prospect,
-    feature: Feature.find_by(title: "age"),
-    value: 35
+    feature: Feature.find_by(title: "City"),
+    option: Option.where({ feature: Feature.find_by(title: "City") }).sample
   )
 end
 
 puts "90%"
 
-prospect_seed = Prospect.all.sample(90)
+prospect_seed = Prospect.all.sample(8000)
 prospect_seed.each do |prospect|
   Item.create(
     prospect: prospect,
-    feature: Feature.find_by(title: "marital_status"),
-    option: Option.where({ feature: Feature.find_by(title: "marital_status") }).sample
+    feature: Feature.find_by(title: "Children"),
+    option: Option.where({ feature: Feature.find_by(title: "Children") }).sample
   )
 end
 
-prospect_seed = Prospect.all.sample(90)
-prospect_seed.each do |prospect|
-  Item.create(
-    prospect: prospect,
-    feature: Feature.find_by(title: "city"),
-    option: Option.where({ feature: Feature.find_by(title: "city") }).sample
-  )
-end
-
-prospect_seed.each do |prospect|
-  Item.create(
-    prospect: prospect,
-    feature: Feature.find_by(title: "children"),
-    option: Option.where({ feature: Feature.find_by(title: "children") }).sample
-  )
-end
-
+puts "100%"
 puts "done"

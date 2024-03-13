@@ -6,8 +6,11 @@
           <% @research.options.each do |option| %>
             <li class="card-item_edit border-bottom"><%= option.feature.title %> : <%= option.value %></li>
           <% end %>
+            <% if @research.feature_ids.include?(Feature.find_by(title: "Age").id) %>
+              <li class="card-item_edit border-bottom">Age : <%= @filter_age_min %> years old to <%= @filter_age_max %> years old</li>
+            <% end %>
         </ul>
-        <p>price : <%= 1 * prospect_count %>$</p>
+        <p>price : <%= 0.18 * prospect_count %>$</p>
           <%= simple_form_for @research, url: research_path(@research) do |f|%>
             <%= f.hidden_field :prospect_count, value: prospect_count %>
             <%= f.button :submit, "select this formula", class: "select-button_edit" %>
