@@ -17,7 +17,7 @@ class FiltersController < ApplicationController
   end
 
   def toggle_age
-    if @research.feature_ids.include?(Feature.find_by(title: "age").id)
+    if @research.feature_ids.include?(Feature.find_by(title: "Age").id)
       update_age
     else
       create_age
@@ -53,15 +53,15 @@ class FiltersController < ApplicationController
 
   def create_age
     @filter = Filter.new(
-      feature: Feature.find_by(title: "age"),
+      feature: Feature.find_by(title: "Age"),
       research: Research.find(params[:research_id]),
       min: filter_params["min"],
       max: filter_params["max"]
     )
     @filter.save!
     set_display
-    @age_min = Filter.where({ feature_id: Feature.find_by(title: "age").id, research_id: @research }).min.min
-    @age_max = Filter.where({ feature_id: Feature.find_by(title: "age").id, research_id: @research }).max.max
+    @age_min = Filter.where({ feature_id: Feature.find_by(title: "Age").id, research_id: @research }).min.min
+    @age_max = Filter.where({ feature_id: Feature.find_by(title: "Age").id, research_id: @research }).max.max
     respond_to do |format|
       format.html
       format.text { render partial: 'filters/filters_content_age', formats: [:html] }
@@ -70,11 +70,11 @@ class FiltersController < ApplicationController
 
   def update_age
     @user = current_user
-    @filter_to_update = Filter.where({ feature_id: Feature.find_by(title: "age").id, research_id: @research })
+    @filter_to_update = Filter.where({ feature_id: Feature.find_by(title: "Age").id, research_id: @research })
     @filter_to_update.update(filter_params)
     set_display
-    @age_min = Filter.where({ feature_id: Feature.find_by(title: "age").id, research_id: @research }).min.min
-    @age_max = Filter.where({ feature_id: Feature.find_by(title: "age").id, research_id: @research }).max.max
+    @age_min = Filter.where({ feature_id: Feature.find_by(title: "Age").id, research_id: @research }).min.min
+    @age_max = Filter.where({ feature_id: Feature.find_by(title: "Age").id, research_id: @research }).max.max
     respond_to do |format|
       format.html
       format.text { render partial: 'filters/filters_content_age', formats: [:html] }

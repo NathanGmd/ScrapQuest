@@ -2,25 +2,28 @@
   <div class="mb-4">
     <h1 class="indexh1">Your Databases</h1>
   </div>
+
   <div class="containercenterindex">
-    <% @researches_grouped.each_with_index do |research_grouped, index| %>
-      <% if research_grouped[:research].prospect_count != nil %>
-        <div class="containerindex">
-          <div class="thedataindex">
-            <div class="d-flex justify-content-between">
-              <h2 class="databaseindex">Database: <%= index %></h2>
-              <%= link_to "Access Content", research_path(research_grouped[:research]), class: "select-button_edit" %>
-            </div>
-            <p class="number-of-leads">Number of leads found: <%= research_grouped[:research].prospect_count %>   <i class="fas fa-user"></i></p>
-            <div class="elementfiltre">
-              <% research_grouped[:grouped_options].each do |feature, options| %>
-                <div class="margin-index">
-                  <strong><%= feature.title %>:</strong> <%= options.map { |option| option.value }.join(', ') %>
-                </div>
-              <% end %>
+    <% @count = 1 %>
+      <% @researches_grouped.each do |research_grouped| %>
+        <% if research_grouped[:research].prospect_count != nil %>
+          <div class="containerindex">
+            <div class="thedataindex">
+              <div class="d-flex justify-content-between">
+                <h2 class="databaseindex">Database: <%= @count %> </h2>
+                <%= link_to "Access Content", research_path(research_grouped[:research]), class: "select-button_edit" %>
+              </div>
+              <p class="number-of-leads">Number of leads found: <%= research_grouped[:research].prospect_count %> <i class="fas fa-user"></i></p>
+              <div class="elementfiltre">
+                <% research_grouped[:grouped_options].each do |feature, options| %>
+                  <div class="margin-index">
+                    <strong><%= feature.title %>:</strong> <%= options.map { |option| option.value }.join(', ') %>
+                  </div>
+                <% end %>
+              </div>
             </div>
           </div>
-        </div>
+        <% @count += 1 %>
       <% end %>
     <% end %>
   </div>
