@@ -1,21 +1,22 @@
-<div class="container mt-5">
+<div class="containerindexresearch">
   <div class="mb-4">
-    <h1 class="text-center">Your Databases</h1>
+    <h1 class="indexh1">Your Databases</h1>
   </div>
-  <div class="row">
+
+  <div class="containercenterindex">
     <% @count = 1 %>
       <% @researches_grouped.each do |research_grouped| %>
         <% if research_grouped[:research].prospect_count != nil %>
-          <div class="col-12 mb-4">
-            <div class="border p-4 rounded shadow">
+          <div class="containerindex">
+            <div class="thedataindex">
               <div class="d-flex justify-content-between">
-                <h2>Database: <%= @count %> </h2>
-                <%= link_to "Access Content", research_path(research_grouped[:research]), class: "btn btn-primary" %>
+                <h2 class="databaseindex">Database: <%= @count %> </h2>
+                <%= link_to "Access Content", research_path(research_grouped[:research]), class: "select-button_edit" %>
               </div>
-              <p>Number of leads found: <%= research_grouped[:research].prospect_count %></p>
-              <div class="d-flex flex-row flex-wrap" style="overflow-x: auto;">
+              <p class="number-of-leads">Number of leads found: <%= research_grouped[:research].prospect_count %> <i class="fas fa-user"></i></p>
+              <div class="elementfiltre">
                 <% research_grouped[:grouped_options].each do |feature, options| %>
-                  <div class="m-2 p-2 border"  style="overflow-x: auto;">
+                  <div class="margin-index">
                     <strong><%= feature.title %>:</strong> <%= options.map { |option| option.value }.join(', ') %>
                   </div>
                 <% end %>

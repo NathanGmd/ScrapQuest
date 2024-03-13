@@ -10,12 +10,12 @@
 require 'faker'
 puts "progress :"
 
-# Item.destroy_all
-# Filter.destroy_all
-# Option.destroy_all
-# Prospect.destroy_all
-# Feature.destroy_all
-# Research.destroy_all
+Item.destroy_all
+Filter.destroy_all
+Option.destroy_all
+Prospect.destroy_all
+Feature.destroy_all
+Research.destroy_all
 
 TYPES = ["Gender", "Profession", "Study lvl", "Language", "Age", "Marital Status", "City", "Children"]
 TYPE = {

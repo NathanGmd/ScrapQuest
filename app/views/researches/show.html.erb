@@ -1,15 +1,8 @@
-<div class="container researcheshow">
-  <div class="row mb-4 mt-3 rounded">
-    <div class="col-md-12">
-      <div class="researchesshowyour border p-3 rounded shadow">
-        <h1 class="display-3">Your Database</h1>
-      </div>
-    </div>
-  </div>
+<div class="researcheshow1">
+      <h1 class="indexh2"> </i> Your Database</h1>
 
-  <div class="row">
-    <div class="col-md-4">
-      <div class="border p-4 mb-4 rounded shadow">
+  <div class="divclass1">
+    <div class="divclass2">
         <h4>Filtres:</h4>
         <ul class="researchesshow list-group">
           <% grouped_options = @research.filters.includes(:feature, :option).group_by { |filter| filter.feature.title }.transform_values do |filters|
@@ -29,11 +22,10 @@
           <% end %>
         </ul>
       </div>
-    </div>
 
-    <div class="col-md-8">
+    <div class="divclass4">
       <div class="border p-4 rounded shadow mb-4">
-        <h2 class="mb-3">Prospects</h2>
+        <h2 class="mb-3" >Prospects : <%= @research.prospect_count %> <i class="fas fa-user"></i> </h2>
         <div class="researchesshow">
           <table class="table table-bordered">
             <thead>
@@ -45,7 +37,7 @@
               </tr>
             </thead>
             <tbody>
-              <% @prospects.limit(5).each do |prospect| %>
+              <% @prospects.limit(20).each do |prospect| %>
                 <tr>
                   <td><%= prospect.first_name %></td>
                   <td><%= prospect.last_name %></td>
