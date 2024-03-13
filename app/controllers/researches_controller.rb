@@ -12,6 +12,7 @@ class ResearchesController < ApplicationController
         grouped_options: grouped_options
       }
     end
+    @count = 1
   end
 
   def create
@@ -68,7 +69,7 @@ class ResearchesController < ApplicationController
   end
 
   def set_age
-    filter =  Filter.find_by({ feature_id: Feature.find_by(title: "age").id, research_id: @research.id })
+    filter =  Filter.find_by({ feature_id: Feature.find_by(title: "Age").id, research_id: @research.id })
     if filter.present?
       @filter_age_min = filter.min
       @filter_age_max = filter.max
@@ -83,16 +84,10 @@ class ResearchesController < ApplicationController
   end
 
   def set_prospect
-    #@prospect_list = Prospect.joins(:items)
-    #                         .where("value BETWEEN ? AND ?", @filter_age_min, @filter_age_max)
-    #                         .where(items: { option_id: @option_ids })
-    #                         .group("prospects.id")
-    #                         .having('COUNT(DISTINCT items.feature_id) = ?', @research.features.uniq.size)
-
     item_ids = (Item.where("value BETWEEN ? AND ?", @filter_age_min, @filter_age_max).map(&:id) + @research.options.map(&:items).flatten.map(&:id)).uniq
     @prospect_list = Prospect.joins(:items)
                              .where(items: { id: item_ids })
                              .group("prospects.id")
-                             .having('COUNT(DISTINCT items.feature_id) = ?', @research.features.uniq.size)
+                             .having('COUNT(DISTINCT items.feature_id) = ?', @research.features.size)
   end
 end

@@ -29,7 +29,7 @@ TYPE = {
   "Children" => %w[Yes No]
 }
 
-200_000.times do
+150_000.times do
   newprospect = Prospect.new(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
@@ -56,13 +56,13 @@ Prospect.all.each do |prospect|
   Item.create(
     prospect: prospect,
     feature: Feature.find_by(title: "Gender"),
-    option: Option.where({ feature: Feature.find_by(title: "gender") }).sample
+    option: Option.where({ feature: Feature.find_by(title: "Gender") }).sample
   )
 end
 
 puts "30%"
 
-prospect_seed = Prospect.all.sample(180_000)
+prospect_seed = Prospect.all.sample(120_000)
 prospect_seed.each do |prospect|
   Item.create(
     prospect: prospect,
@@ -73,7 +73,7 @@ end
 
 puts "40%"
 
-prospect_seed = Prospect.all.sample(180_000)
+prospect_seed = Prospect.all.sample(120_000)
 prospect_seed.each do |prospect|
   Item.create(
     prospect: prospect,
@@ -84,7 +84,7 @@ end
 
 puts "50%"
 
-prospect_seed = Prospect.all.sample(180_000)
+prospect_seed = Prospect.all.sample(120_000)
 prospect_seed.each do |prospect|
   Item.create(
     prospect: prospect,
@@ -95,7 +95,7 @@ end
 
 puts "60%"
 
-prospect_seed = Prospect.all.sample(180_000)
+prospect_seed = Prospect.all
 prospect_seed.each do |prospect|
   Item.create(
     prospect: prospect,
@@ -106,7 +106,7 @@ end
 
 puts "70%"
 
-prospect_seed = Prospect.all.sample(180_000)
+prospect_seed = Prospect.all.sample(120_000)
 prospect_seed.each do |prospect|
   Item.create(
     prospect: prospect,
@@ -117,7 +117,7 @@ end
 
 puts "80%"
 
-prospect_seed = Prospect.all.sample(180_000)
+prospect_seed = Prospect.all.sample(120_000)
 prospect_seed.each do |prospect|
   Item.create(
     prospect: prospect,
@@ -128,6 +128,7 @@ end
 
 puts "90%"
 
+prospect_seed = Prospect.all.sample(120_000)
 prospect_seed.each do |prospect|
   Item.create(
     prospect: prospect,
