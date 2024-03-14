@@ -29,15 +29,20 @@ TYPE = {
   "Children" => %w[Yes No]
 }
 
-10_000.times do
-  newprospect = Prospect.new(
-    first_name: Faker::Name.first_name,
+30_000.times do
+  prospect = Prospect.create(
     last_name: Faker::Name.last_name,
     address: Faker::Address.full_address
   )
-  newprospect.email = "#{newprospect.last_name}.#{newprospect.first_name}@gmail.com"
-  newprospect.save
+    prospect.email = "#{prospect.last_name}.#{prospect.first_name}@gmail.com"
 end
+
+Item.create(
+  prospect: Prospect.last,
+  feature: Feature.find_by(title: "Gender"),
+  option: Option.find_by(value: "Woman")
+)
+puts "20%"
 
 TYPES.each do |t|
   Feature.create(title: t)
@@ -50,19 +55,9 @@ TYPE.each do |t|
   end
 end
 
-puts "20%"
-
-Prospect.all.each do |prospect|
-  Item.create(
-    prospect: prospect,
-    feature: Feature.find_by(title: "Gender"),
-    option: Option.where({ feature: Feature.find_by(title: "Gender") }).sample
-  )
-end
-
 puts "30%"
 
-prospect_seed = Prospect.all.sample(8000)
+prospect_seed = Prospect.all.sample(26_000)
 prospect_seed.each do |prospect|
   Item.create(
     prospect: prospect,
@@ -71,9 +66,25 @@ prospect_seed.each do |prospect|
   )
 end
 
+Prospect.all.each do |prospect|
+  Item.create(
+    prospect: prospect,
+    feature: Feature.find_by(title: "Gender"),
+    option: Option.where({ feature: Feature.find_by(title: "Gender") }).sample
+  )
+  if prospect.options.include?(Option.find_by(value: "Man"))
+    prospect.first_name = Faker::Name.female_first_name
+  else
+    prospect.first_name = Faker::Name.male_first_name
+  end
+  prospect.email = "#{prospect.last_name}.#{prospect.first_name}@gmail.com"
+  prospect.save
+end
+# Option.find_by({ feature_id: Feature.find_by(title: "Gender").id, prospect_id: prospect }) == Option.find_by(value: "Man")
+
 puts "40%"
 
-prospect_seed = Prospect.all.sample(8000)
+prospect_seed = Prospect.all.sample(26_000)
 prospect_seed.each do |prospect|
   Item.create(
     prospect: prospect,
@@ -84,7 +95,7 @@ end
 
 puts "50%"
 
-prospect_seed = Prospect.all.sample(8000)
+prospect_seed = Prospect.all.sample(26_000)
 prospect_seed.each do |prospect|
   Item.create(
     prospect: prospect,
@@ -106,7 +117,7 @@ end
 
 puts "70%"
 
-prospect_seed = Prospect.all.sample(8000)
+prospect_seed = Prospect.all.sample(26_000)
 prospect_seed.each do |prospect|
   Item.create(
     prospect: prospect,
@@ -117,7 +128,7 @@ end
 
 puts "80%"
 
-prospect_seed = Prospect.all.sample(8000)
+prospect_seed = Prospect.all.sample(26_000)
 prospect_seed.each do |prospect|
   Item.create(
     prospect: prospect,
@@ -126,9 +137,9 @@ prospect_seed.each do |prospect|
   )
 end
 
-puts "90%"
+puts "26_000%"
 
-prospect_seed = Prospect.all.sample(8000)
+prospect_seed = Prospect.all.sample(26_000)
 prospect_seed.each do |prospect|
   Item.create(
     prospect: prospect,
