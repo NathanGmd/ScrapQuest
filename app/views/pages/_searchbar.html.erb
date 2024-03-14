@@ -1,4 +1,6 @@
-<div data-controller="search">
+<div class="main-container1">
+<div class="search-container1">
+<div class="thesearchbarcard" data-controller="search">
   <%= form_with url: data_search_path, data: { action: "submit->search#find", search_target: "form" }, method: :get do |form| %>
     <%= form.label :first_name, "First name" %>
     <%= form.text_field :first_name, value: params[:first_name] %>
@@ -9,6 +11,8 @@
     <%= form.submit "Search" %>
   <% end %>
 
-  <div data-search-target="results">
+  <div class="resultssearchbar" data-search-target="results">
   </div>
+</div>
+</div>
 </div>

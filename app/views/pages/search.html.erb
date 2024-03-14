@@ -1,14 +1,21 @@
-<%= render partial: "searchbar" %>
-
-<% @prospects.each do |prospect| %>
-  <div>
-    <h3><%= prospect.first_name %> <%= prospect.last_name %></h3>
-    <p>Email: <%= prospect.email %></p>
-    <p>Address: <%= prospect.address %></p>
-    <ul>
-      <% prospect.items.each do |item| %>
-        <li><%= item.feature.title %>: <%= item.option&.value || item.value %></li>
+<div class="main-container1">
+  <div class="super-mega-ultra-card">
+    <div class="search-container1">
+      <%= render partial: "searchbar" %>
+    </div>
+    <div class="results-container1">
+      <% @prospects.each do |prospect| %>
+        <div class="prospect1">
+          <h3><%= prospect.first_name %> <%= prospect.last_name %></h3>
+          <p>Email: <%= prospect.email %></p>
+          <p>Address: <%= prospect.address %></p>
+          <ul>
+            <% prospect.items.each do |item| %>
+              <li><%= item.feature.title %>: <%= item.option&.value || item.value %></li>
+            <% end %>
+          </ul>
+        </div>
       <% end %>
-    </ul>
+    </div>
   </div>
-<% end %>
+</div>
