@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
   get 'data', to: 'pages#data', as: 'data'
   post 'data', to: 'pages#search', as: 'search_data'
-  get 'data/search', to: 'pages#search'
+
 
   resources :researches do
     resources :filters, except: :destroy
@@ -21,3 +21,4 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 end
+  
