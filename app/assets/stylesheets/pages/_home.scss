@@ -14,7 +14,7 @@
 
 .top-button {
   background-color: #ffffff;
-  color: rgb(255, 173, 119);
+  color: #ffad77;
   border-radius: 25px;
   padding: 0;
   text-align: center;
@@ -228,7 +228,7 @@
 }
 
 .graph-container {
-  width: 300px;
+  width: 100%;
   margin-left: 5px;
   margin-top: 5px;
 }
@@ -237,6 +237,7 @@
   display: flex;
   flex-direction: column;
   gap: 5px;
+  width: 100%;
 }
 
 .bar {
@@ -245,6 +246,7 @@
   border-radius: 25px;
   overflow: hidden;
   background: linear-gradient(to right, #ff7e5f, #feb47b);
+  width: 100%;
 }
 
 .bar span {
@@ -265,24 +267,24 @@
 }
 
 #bar1 {
-  width: 75%;
+  width: 85%;
   animation: bounce 1s ease forwards;
 }
 
 #bar2 {
-  width: 50%;
+  width: 67%;
   animation: bounce 1s ease forwards;
   animation-delay: 0.2s;
 }
 
 #bar3 {
-  width: 40%;
+  width: 55%;
   animation: bounce 1s ease forwards;
   animation-delay: 0.3s;
 }
 
 #bar4 {
-  width: 40%;
+  width: 55%;
   animation: bounce 1s ease forwards;
   animation-delay: 0.4s;
 }

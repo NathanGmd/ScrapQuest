@@ -1,66 +1,204 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>We're sorry, but something went wrong (500)</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>500 Not Found</title>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&display=swap" rel="stylesheet">
   <style>
-  .rails-default-error-page {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
-  }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Comic Neue', cursive;
+      background-color: #eee;
+    }
 
-  .rails-default-error-page div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
-  }
+    .my_super_wrapper {
+      min-width: 100vw;
+      min-height: 90vh;
+      display: flex;
+      flex-wrap: wrap;
+      text-align: center;
+      align-items: center;
+    }
 
-  .rails-default-error-page div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+    .my_super_text_group {
+      flex: 0 0 30%;
+      margin-left: 25%;
+      align-items: flex-end;
+    }
 
-  .rails-default-error-page h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
+    .my_super_text_500 {
+      font-size: 10em;
+      box-sizing: border-box;
+      color: #363636;
+      margin: 0;
+    }
 
-  .rails-default-error-page div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+    .my_super_text_lost {
+      font-size: 2em;
+      line-height: 50px;
+      box-sizing: border-box;
+      color: #565656;
+      width: 100%;
+      padding: 0 22px;
+    }
+
+    .my_super_window_group {
+      flex: 1 0 40%;
+      margin-top: 0;
+      margin-left: 5%;
+    }
+
+    .my_super_window_500 {
+      width: 200px;
+      height: 350px;
+      border-radius: 100px;
+      box-shadow: -3px -3px 0px 5px rgba(212, 212, 212, 1),
+        5px 5px 0px 2px rgba(255, 255, 255, 1);
+      background: linear-gradient(
+        310deg,
+        rgba(2, 0, 36, 1) 0%,
+        rgba(9, 9, 107, 1) 0%,
+        rgba(0, 0, 0, 1) 80%
+      );
+      position: relative;
+      overflow: hidden;
+      margin-left: 25%;
+      transform: translateX(-50%);
+      margin-top: 20px;
+    }
+
+    .my_super_stars {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      animation: flyby 30s linear infinite;
+    }
+
+    .my_super_star {
+      border-radius: 50%;
+      background: #ffffff;
+      position: absolute;
+    }
+
+    .my_super_star:nth-of-type(1) {
+      width: 3px;
+      height: 3px;
+      left: 200px;
+      top: 100px;
+      animation: twinkle1 5s linear infinite, twinkle1_delay 3s;
+    }
+
+    .my_super_star:nth-of-type(2) {
+      width: 5px;
+      height: 5px;
+      left: 300px;
+      top: 200px;
+      animation: twinkle2 6s linear infinite, twinkle2_delay 4s;
+    }
+
+    @keyframes twinkle1 {
+      0% {
+        transform: scale(1, 1);
+      }
+      10% {
+        transform: scale(0.3, 0.3);
+      }
+      20% {
+        transform: scale(1, 1);
+      }
+      30% {
+        transform: scale(0.5, 0.5);
+      }
+      40% {
+        transform: scale(1, 1);
+      }
+      100% {
+        transform: scale(1, 1);
+      }
+    }
+
+    @keyframes twinkle1_delay {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes twinkle2 {
+      0% {
+        transform: scale(1, 1);
+      }
+      10% {
+        transform: scale(0.3, 0.3);
+      }
+      20% {
+        transform: scale(1, 1);
+      }
+      30% {
+        transform: scale(0.5, 0.5);
+      }
+      40% {
+        transform: scale(1, 1);
+      }
+      100% {
+        transform: scale(1, 1);
+      }
+    }
+
+    @keyframes twinkle2_delay {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes flyby {
+      from {
+        left: 0%;
+      }
+      to {
+        left: -100%;
+      }
+    }
+
+    .my_super_btn {
+      padding: 15px 30px;
+      background-color: #ffad77;
+      color: #fff;
+      text-decoration: none;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .my_super_btn:hover {
+      background-color: #ffffff;
+      color: #ffad77;
+    }
   </style>
 </head>
-
-<body class="rails-default-error-page">
-  <!-- This file lives in public/500.html -->
-  <div class="dialog">
-    <div>
-      <h1>We're sorry, but something went wrong.</h1>
+<body>
+  <div class="my_super_wrapper">
+    <div class="my_super_text_group">
+      <p class="my_super_text_500">500</p>
+      <p class="my_super_text_lost">The page <br />has been lost in the database.</p>
+      <a href="/" class="my_super_btn">Go to Home</a>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
+    <div class="my_super_window_group">
+      <div class="my_super_window_500">
+        <div class="my_super_stars"></div>
+      </div>
+    </div>
   </div>
 </body>
 </html>
