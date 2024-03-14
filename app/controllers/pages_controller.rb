@@ -3,7 +3,7 @@ class PagesController < ApplicationController
   end
 
   def data
-    @prospects = Prospect.all
+    @prospects = []
   end
 
   def search
@@ -16,6 +16,10 @@ class PagesController < ApplicationController
       @prospects = Prospect.where(conditions)
     end
     
+    respond_to do |format|
+      format.html # Follow regular flow of Rails
+      format.text { render partial: "pages/results", locals: {prospects: @prospects}, formats: [:html] }
+    end
     # render turbo_stream: turbo_stream.replace("search_results", partial: "pages/results", locals: { prospects: @prospects })
 
   end

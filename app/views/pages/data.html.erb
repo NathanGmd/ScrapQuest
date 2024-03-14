@@ -1,2 +1,5 @@
 <%# turbo_frame_tag "search_results" %>
-<%= render partial: "searchbar" %>
+<div data-controller="search">
+    <%= render partial: "searchbar" %>
+    <%= render partial: "results", prospects: @prospects %>
+</div>
