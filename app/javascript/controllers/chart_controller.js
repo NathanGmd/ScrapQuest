@@ -23,6 +23,11 @@ export default class extends Controller {
         type: 'line',
         data: chartData,
         options: {
+            plugins: {
+                legend: {
+                  display: false
+                }
+              },
             scales: {
                 yAxes: [{
                     ticks: {
