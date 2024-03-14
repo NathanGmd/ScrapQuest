@@ -4,7 +4,7 @@
 
     <%= link_to "Your databases", researches_path, class: "top-button" %>
     <%= link_to "New database", "/researches", class: "top-button", data: {turbo_method: :post} %>
-    <%= link_to "Your profil", data_path, class: "top-button" %>
+    <%= link_to "Find someone", data_path, class: "top-button" %>
   </div>
   <div class="dashboardbottom">
     <div class="left-bot-card">
@@ -15,12 +15,12 @@
     </div>
     <div class="middle-bot-card">
       <h2>Our Updates :</h2>
-      <div class="update-box">Update n°1</div>
-      <div class="update-box">Update n°2</div>
-      <div class="update-box">Update n°3</div>
+      <div class="update-box"><i class="fa-brands fa-linkedin"></i> We're now scraping LinkedIn</div>
+      <div class="update-box"><i class="fa-brands fa-square-facebook"></i> We're now scraping Facebook</div>
+      <div class="update-box"><i class="fa-brands fa-square-instagram"></i> We're now scraping Instragam</div>
     </div>
     <div class="right-bot-card">
-      <h2>Top Prospects Cities :</h2>
+      <h2>Top Prospected Cities :</h2>
       <div class="graph-container">
         <div class="bar-container">
           <p class="city-name">Bordeaux</p>
@@ -46,7 +46,7 @@
   <div class="chartbottom">
     <div class="bot-bot-card">
       <h2>Our total scrapped data :</h2>
-        <div style="width: 800px;">
+        <div class="canvas-container">
           <canvas id="chLine" data-controller="chart"></canvas>
         </div>
     </div>

@@ -1,13 +1,15 @@
 .indexh1 {
     color: #ffad77;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
     text-align: center;
     font-weight: bold;
     font-size: 4rem;
+    animation: slideInDown 0.6s ease;
+    transition: opacity 0.5s ease;
 }
 
 .containerindexresearch {
-    margin-top: 3em;
+    margin-top: 2rem;
 }
 
 .containerindex {
@@ -25,14 +27,16 @@
     border-radius: 25px;
     box-shadow: 3px 9px 10px rgba(0, 0, 0, 0.1);
     border: 1px solid #f0f0f0f3;
-    transition: transform 0.5s ease, box-shadow 0.3s ease;
-    height: auto
-};
+    transition: box-shadow 0.3s ease;
+    transition: transform 0.3s ease;
+    animation: fadeIn 1.3s ease;
+    height: auto;
+}
 
 .thedataindex:hover {
-    transform: translateY(-5px) scale(1,1);
     box-shadow: 0px 8px 20px #FFAD77;
-  }
+    transform: scale(1.02);
+}
 
 .elementfiltre {
     margin-bottom: 10px;
@@ -69,12 +73,22 @@
     font-family: 'Arial', sans-serif;
 }
 
-.databaseindex{
+.databaseindex {
     margin-bottom: 25px;
     margin-left: 20px;
 }
 
-.number-of-leads{
+.number-of-leads {
     margin-bottom: 20px;
     padding-left: 20px;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes slideInDown {
+  0% { transform: translateY(-50%); }
+  100% { transform: translateY(0); }
 }

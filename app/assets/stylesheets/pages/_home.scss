@@ -14,7 +14,7 @@
 
 .top-button {
   background-color: #ffffff;
-  color: rgb(255, 173, 119);
+  color: #ffad77;
   border-radius: 25px;
   padding: 0;
   text-align: center;
@@ -53,6 +53,7 @@
   border-radius: 25px;
   box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.1);
   border: 1px solid #f0f0f0f3;
+  cursor: default;
 }
 
 .left-bot-card h2,
@@ -67,12 +68,13 @@
   padding: 30px;
   border-radius: 25px;
   box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
   margin-left: 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .left-bot-card:hover {
   box-shadow: 0px 7px 10px rgb(255, 173, 119);
+  transform: translateY(-5px);
 }
 
 .bot-bot-card {
@@ -81,13 +83,15 @@
   padding: 30px;
   border-radius: 25px;
   box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
   margin-left: 5%;
   margin-right: 2%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
 }
 
 .bot-bot-card:hover {
   box-shadow: 0px 7px 10px rgb(255, 173, 119);
+  transform: translateY(-5px);
 }
 
 .second-bot-bot-card {
@@ -96,13 +100,15 @@
   padding: 30px;
   border-radius: 25px;
   box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
   margin-right: 5%;
   margin-left: 2%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
 }
 
 .second-bot-bot-card:hover {
   box-shadow: 0px 7px 10px rgb(255, 173, 119);
+  transform: translateY(-5px);
 }
 
 .left-bot-card h2 {
@@ -118,11 +124,12 @@
   padding: 30px;
   border-radius: 25px;
   box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .middle-bot-card:hover {
   box-shadow: 0px 7px 10px rgb(255, 173, 119);
+  transform: translateY(-5px);
 }
 
 .middle-bot-card h2 {
@@ -138,12 +145,13 @@
   padding: 30px;
   border-radius: 25px;
   box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
   margin-right: 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .right-bot-card:hover {
   box-shadow: 0px 7px 10px rgb(255, 173, 119);
+  transform: translateY(-5px);
 }
 
 .right-bot-card h2 {
@@ -190,6 +198,7 @@
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
+  cursor: default;
   font-size: 18px;
 }
 
@@ -219,7 +228,7 @@
 }
 
 .graph-container {
-  width: 300px;
+  width: 100%;
   margin-left: 5px;
   margin-top: 5px;
 }
@@ -228,6 +237,7 @@
   display: flex;
   flex-direction: column;
   gap: 5px;
+  width: 100%;
 }
 
 .bar {
@@ -236,6 +246,7 @@
   border-radius: 25px;
   overflow: hidden;
   background: linear-gradient(to right, #ff7e5f, #feb47b);
+  width: 100%;
 }
 
 .bar span {
@@ -256,24 +267,24 @@
 }
 
 #bar1 {
-  width: 75%;
+  width: 85%;
   animation: bounce 1s ease forwards;
 }
 
 #bar2 {
-  width: 50%;
+  width: 67%;
   animation: bounce 1s ease forwards;
   animation-delay: 0.2s;
 }
 
 #bar3 {
-  width: 40%;
+  width: 55%;
   animation: bounce 1s ease forwards;
   animation-delay: 0.3s;
 }
 
 #bar4 {
-  width: 40%;
+  width: 55%;
   animation: bounce 1s ease forwards;
   animation-delay: 0.4s;
 }
@@ -290,16 +301,18 @@
   }
 }
 
+#chLine {
+  max-width: 600px;
+  max-height: 300px;
+  width: 100%;
+  height: auto; 
+  margin-top: 0.5rem;
+}
+
 .docanvas {
   max-width: 600px;
   max-height: 300px;
   width: 100%;
   height: auto; 
-}
-
-.bot-bot-card canvas {
-  max-width: 600px;
-  max-height: 300px;
-  width: 100%;
-  height: auto; 
+  margin-top: 0.5rem;
 }

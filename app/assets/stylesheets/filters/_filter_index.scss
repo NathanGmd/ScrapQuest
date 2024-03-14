@@ -116,7 +116,9 @@
 }
 
 .feature-options-list {
-  flex-wrap: wrap;
+  display: flex; 
+  flex-wrap: nowrap;
+  overflow-x: auto;
 }
 
 .simple_form.new_filter {
