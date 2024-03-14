@@ -5,7 +5,6 @@ Chart.register(...registerables);
 export default class extends Controller {
    connect() {
      let bar_ctx = this.element.getContext('2d');
-
      let purple_orange_gradient = bar_ctx.createLinearGradient(0, 0, 0, 600);
      purple_orange_gradient.addColorStop(0, 'orange');
      purple_orange_gradient.addColorStop(1, 'purple');
@@ -30,7 +29,11 @@ export default class extends Controller {
                          beginAtZero:true
                      }
                  }]
-             }
+              },
+              legend: {
+                  display: false
+              },
+              responsive: true
          }
      });
    }

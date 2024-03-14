@@ -3,11 +3,11 @@ import { Chart, registerables } from "chart.js";
 Chart.register(...registerables);
 
 export default class extends Controller {
-  connect() {
-    let colors = ['#FFAD77','#28A745','#333333','#C3E6CB','#DC3545','#6C757D'];
-    let chLine = document.getElementById('chLine');
+   connect() {
+     let chLine = this.element.getContext('2d');
+     let colors = ['#FFAD77','#28A745','#333333','#C3E6CB','#DC3545','#6C757D'];
 
-    let chartData = {
+     let chartData = {
         labels: ["07/03", "08/03", "09/03", "10/03", "11/03", "12/03", "13/03"],
         datasets: [{
             label: '',
@@ -17,16 +17,16 @@ export default class extends Controller {
             borderWidth: 4,
             pointBackgroundColor: colors[0],
         }]
-    };
+     };
 
-    new Chart(chLine, {
+     new Chart(chLine, {
         type: 'line',
         data: chartData,
         options: {
             scales: {
-                xAxes: [{
+                yAxes: [{
                     ticks: {
-                        beginAtZero: false
+                        beginAtZero:true
                     }
                 }]
             },
@@ -35,6 +35,6 @@ export default class extends Controller {
             },
             responsive: true
         }
-    });
-  }
+     });
+   }
 }
